@@ -9,6 +9,7 @@ import office from "@/assets/project-office.jpg";
 import noor from "@/assets/portrait-noor.jpg";
 export const images = { hero, kitchen, bedroom, foyer, dining, materials, office, noor };
 export const projects = [
+    //fhjhskfh
     {
         slug: "the-travertine-villa",
         name: "The Travertine Villa",

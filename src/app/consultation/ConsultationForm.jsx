@@ -2,6 +2,13 @@
 
 import { useState } from "react";
 import { STUDIO } from "@/lib/data";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export default function ConsultationForm() {
   const [sent, setSent] = useState(false);
@@ -147,22 +154,23 @@ export default function ConsultationForm() {
           </div>
           <div>
             <label className="field-label">Project Scope</label>
-            <select
-              name="scope"
+            <Select
               value={formData.scope}
-              onChange={handleChange}
+              onValueChange={(val) => setFormData((prev) => ({ ...prev, scope: val }))}
               disabled={loading}
-              className="field"
-              required
             >
-              <option value="" disabled>Select scope</option>
-              <option value="Full home — turnkey">Full home — turnkey</option>
-              <option value="Single room — kitchen">Single room — kitchen</option>
-              <option value="Single room — living">Single room — living</option>
-              <option value="Single room — bedroom">Single room — bedroom</option>
-              <option value="Office / commercial">Office / commercial</option>
-              <option value="Still exploring">Still exploring</option>
-            </select>
+                <SelectTrigger className="field h-auto border-t-0 border-x-0 rounded-none px-0 py-3.5 text-base shadow-none focus:ring-0 focus:border-b-gold flex items-center justify-between">
+                  <SelectValue placeholder="Select scope" />
+                </SelectTrigger>
+                <SelectContent className="bg-popover text-popover-foreground border shadow-md rounded-md p-1">
+                  <SelectItem value="Full home — turnkey">Full home — turnkey</SelectItem>
+                  <SelectItem value="Single room — kitchen">Single room — kitchen</SelectItem>
+                  <SelectItem value="Single room — living">Single room — living</SelectItem>
+                  <SelectItem value="Single room — bedroom">Single room — bedroom</SelectItem>
+                  <SelectItem value="Office / commercial">Office / commercial</SelectItem>
+                  <SelectItem value="Still exploring">Still exploring</SelectItem>
+                </SelectContent>
+              </Select>
           </div>
           <div>
             <label className="field-label">Meeting Format</label>

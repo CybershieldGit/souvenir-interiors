@@ -1,7 +1,7 @@
-import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { Noto_Serif_Display, DM_Sans } from "next/font/google";
 import "../styles.css";
 
-const cormorant = Cormorant_Garamond({
+const notoSerifDisplay = Noto_Serif_Display({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
   style: ["normal", "italic"],
@@ -41,8 +41,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`}>
-      <body>
+    <html lang="en" className={`${notoSerifDisplay.variable} ${dmSans.variable}`} suppressHydrationWarning>
+      <body suppressHydrationWarning>
         {children}
       </body>
     </html>

@@ -37,7 +37,7 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --font-display: "Cormorant Garamond", "Georgia", serif;
+  --font-display: "Noto Serif Display", "Georgia", serif;
   --font-sans: "DM Sans", "Helvetica Neue", system-ui, sans-serif;
 
   --radius-sm: 2px;

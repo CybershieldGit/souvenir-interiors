@@ -354,3 +354,28 @@
 .delay-300 { animation-delay: 0.3s; }
 .delay-400 { animation-delay: 0.4s; }
 .delay-500 { animation-delay: 0.5s; }
+
+/* Services grid — responsive */
+.services-grid {
+  grid-template-columns: 1fr !important;
+}
+@media (min-width: 640px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+@media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(5, 1fr) !important;
+  }
+}
+
+/* Service card hover shadow */
+.services-grid a:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+}

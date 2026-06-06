@@ -81,7 +81,7 @@ export default function ConsultationForm() {
   };
 
   return (
-    <div className="p-8 md:p-12 border" style={{ borderColor: "#e5e5e0", backgroundColor: "#ffffff" }}>
+    <div className="p-6 sm:p-8 md:p-12 border" style={{ borderColor: "#e5e5e0", backgroundColor: "#ffffff" }}>
       {sent ? (
         <div className="py-12 text-center">
           <div className="font-display text-5xl mb-4" style={{ color: "#c9a86a" }}>✓</div>

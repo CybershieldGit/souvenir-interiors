@@ -21,109 +21,21 @@ export default function ServicesIndexPage() {
   return (
     <SiteLayout>
       {/* ─── Hero / Header ─── */}
-      <section 
-        className="relative pt-40 md:pt-48 pb-16 md:pb-24 overflow-hidden"
-        style={{
-          background: "linear-gradient(180deg, #f2e9e0 0%, #faf8f5 100%)"
-        }}
-      >
-        {/* Decorative side image — desktop only */}
-        <div
-          className="hidden lg:block absolute right-0"
-          style={{ 
-            top: "5%",
-            width: 450, 
-            height: 500, 
-            opacity: 0.9,
-            mixBlendMode: "darken",
-            WebkitMaskImage: "radial-gradient(ellipse 80% 60% at 100% 60%, black 20%, transparent 100%)",
-            maskImage: "radial-gradient(ellipse 80% 60% at 100% 60%, black 20%, transparent 100%)"
-          }}
-        >
-          <img
-            src={getSrc(images.servicesHeaderDecor)}
-            alt=""
-            style={{ 
-              width: "100%", 
-              height: "100%", 
-              objectFit: "cover",
-              objectPosition: "right 60%"
-            }}
-          />
-        </div>
-
-        <div className="container-x relative z-10">
+      <section className="pt-40 md:pt-48 pb-16">
+        <div className="container-x">
           <Reveal>
-            <div className="text-center" style={{ maxWidth: 640, margin: "0 auto" }}>
-              {/* Eyebrow */}
-              <div
-                style={{
-                  fontSize: 11,
-                  fontWeight: 600,
-                  letterSpacing: "0.18em",
-                  textTransform: "uppercase",
-                  color: "#c9a86a",
-                  marginBottom: 20,
-                }}
-              >
-                Services
-              </div>
-
-              {/* Heading */}
-              <h1
-                className="font-display"
-                style={{
-                  fontSize: "clamp(44px, 6vw, 72px)",
-                  fontWeight: 300,
-                  lineHeight: 1.06,
-                  color: "#1a1a1a",
-                }}
-              >
-                Our Services
-              </h1>
-
-              {/* Description */}
-              <p
-                style={{
-                  marginTop: 24,
-                  fontSize: 16,
-                  lineHeight: 1.7,
-                  color: "#6b6b6b",
-                  maxWidth: 520,
-                  marginLeft: "auto",
-                  marginRight: "auto",
-                }}
-              >
-                From concept to completion, we craft beautiful, functional spaces
-                that reflect your style and elevate the way you live and work.
-              </p>
-
-              {/* Gold diamond divider */}
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: 12,
-                  marginTop: 32,
-                }}
-              >
-                <span style={{ display: "block", width: 48, height: 1, backgroundColor: "#c9a86a" }} />
-                <span
-                  style={{
-                    display: "block",
-                    width: 10,
-                    height: 10,
-                    backgroundColor: "#c9a86a",
-                    transform: "rotate(45deg)",
-                  }}
-                />
-                <span style={{ display: "block", width: 48, height: 1, backgroundColor: "#c9a86a" }} />
-              </div>
-            </div>
+            <div className="eyebrow mb-6"><span className="rule" /> Services</div>
+            <h1 className="display-l max-w-4xl">
+              Our Services
+            </h1>
+            <p className="lead mt-8 max-w-2xl">
+              From concept to completion, we craft beautiful, functional spaces
+              that reflect your style and elevate the way you live and work.
+            </p>
           </Reveal>
         </div>
       </section>
+
 
       {/* ─── Services Grid ─── */}
       <section style={{ paddingBottom: 96 }}>

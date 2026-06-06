@@ -43,14 +43,14 @@ export default async function ServiceDetailPage({ params }) {
   return (
     <SiteLayout>
       {/* Hero */}
-      <section className="relative h-[80vh] min-h-[560px] overflow-hidden">
+      <section className="relative h-[80vh] min-h-[480px] md:h-screen md:min-h-[640px] overflow-hidden">
         <img src={getSrc(svc.cover)} alt={svc.name} className="absolute inset-0 w-full h-full object-cover animate-slow-zoom" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(26,26,26,0.55) 0%, rgba(26,26,26,0.2) 40%, rgba(26,26,26,0.75) 100%)" }} />
-        <div className="container-x relative z-10 h-full flex flex-col justify-end pb-20 md:pb-28" style={{ color: "#faf8f5" }}>
+        <div className="container-x relative z-10 h-full flex flex-col justify-end pb-12 md:pb-28" style={{ color: "#faf8f5" }}>
           <div className="text-xs uppercase tracking-[0.14em] opacity-70 mb-4 animate-fade-in">
             <Link href="/" style={{ color: "inherit" }}>Home</Link> · <Link href="/services" style={{ color: "inherit" }}>Services</Link> · {svc.shortName}
           </div>
-          <h1 className="display-l max-w-4xl animate-fade-up">{svc.name}</h1>
+          <h1 className="text-3xl sm:text-4xl md:display-l max-w-4xl animate-fade-up" style={{ color: "inherit" }}>{svc.name}</h1>
           <p className="lead mt-6 max-w-2xl animate-fade-up delay-200" style={{ color: "rgba(250,248,245,0.88)" }}>
             {svc.tagline}
           </p>
@@ -68,7 +68,10 @@ export default async function ServiceDetailPage({ params }) {
           </Reveal>
           <Reveal delay={120} className="lg:col-span-6 lg:col-start-7">
             <p className="text-lg leading-relaxed">{svc.intro}</p>
-            <Link href="/consultation" className="btn btn-primary mt-10">
+            <Link
+              href="/consultation"
+              className="btn btn-primary mt-10 w-full sm:w-auto whitespace-normal text-center py-4 px-6 md:py-[18px] md:px-8"
+            >
               Discuss Your {svc.shortName} Project
             </Link>
           </Reveal>
@@ -152,7 +155,12 @@ export default async function ServiceDetailPage({ params }) {
             <h2 className="display-l max-w-4xl mx-auto" style={{ color: "#faf8f5" }}>
               Begin your <em className="italic" style={{ color: "#e8d5a3" }}>{svc.shortName.toLowerCase()}</em> project.
             </h2>
-            <Link href="/consultation" className="btn btn-primary mt-10">Schedule A Consultation</Link>
+            <Link
+              href="/consultation"
+              className="btn btn-primary mt-10 w-full sm:w-auto whitespace-normal text-center py-4 px-6 md:py-[18px] md:px-8"
+            >
+              Schedule A Consultation
+            </Link>
           </Reveal>
         </div>
       </section>

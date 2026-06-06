@@ -35,7 +35,7 @@ export default function Home() {
               <span className="rule" /> Luxury Interiors · Delhi NCR
             </div>
             <h1 className="display-xl">
-              Where Artistry
+              <span style={{ color: "#fcfbf8" }}>Where Artistry</span>
               <br />
               <em className="italic font-light" style={{ color: "#e8d5a3" }}>Meets Precision.</em>
             </h1>

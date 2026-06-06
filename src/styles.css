@@ -106,8 +106,8 @@
   }
 
   ::selection {
-    background: var(--gold);
-    color: var(--charcoal);
+    background: #f5f0e6;
+    color: #1a1a1a;
   }
 
   h1,

@@ -42,14 +42,14 @@ export default async function ProjectDetailPage({ params }) {
   return (
     <SiteLayout>
       {/* Hero */}
-      <section className="relative h-screen min-h-[640px] overflow-hidden">
+      <section className="relative h-[80vh] min-h-[480px] md:h-screen md:min-h-[640px] overflow-hidden">
         <img src={getSrc(project.cover)} alt={project.name} className="absolute inset-0 w-full h-full object-cover animate-slow-zoom" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(26,26,26,0.4) 0%, rgba(26,26,26,0.1) 40%, rgba(26,26,26,0.8) 100%)" }} />
-        <div className="container-x relative z-10 h-full flex flex-col justify-end pb-20 md:pb-28" style={{ color: "#faf8f5" }}>
+        <div className="container-x relative z-10 h-full flex flex-col justify-end pb-12 md:pb-28" style={{ color: "#faf8f5" }}>
           <div className="text-xs uppercase tracking-[0.14em] opacity-70 mb-4 animate-fade-in">
             <Link href="/portfolio" style={{ color: "inherit" }}>Portfolio</Link> · {project.category}
           </div>
-          <h1 className="display-l max-w-4xl animate-fade-up">{project.name}</h1>
+          <h1 className="text-3xl sm:text-4xl md:display-l max-w-4xl animate-fade-up" style={{ color: "inherit" }}>{project.name}</h1>
           <p className="mt-4 text-base md:text-lg opacity-80 animate-fade-up delay-200">{project.type} · {project.location}</p>
         </div>
       </section>
@@ -145,7 +145,12 @@ export default async function ProjectDetailPage({ params }) {
           </div>
 
           <div className="mt-20 text-center">
-            <Link href="/consultation" className="btn btn-primary">Begin Your Own Project</Link>
+            <Link
+              href="/consultation"
+              className="btn btn-primary w-full sm:w-auto whitespace-normal text-center py-4 px-6 md:py-[18px] md:px-8"
+            >
+              Begin Your Own Project
+            </Link>
           </div>
         </div>
       </section>

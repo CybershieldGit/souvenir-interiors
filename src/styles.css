@@ -89,11 +89,13 @@
   * {
     border-color: var(--color-border);
   }
+
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -102,11 +104,16 @@
     line-height: 1.7;
     font-weight: 400;
   }
+
   ::selection {
     background: var(--gold);
     color: var(--charcoal);
   }
-  h1, h2, h3, h4 {
+
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     font-weight: 400;
     letter-spacing: -0.01em;
@@ -124,9 +131,11 @@
     text-transform: uppercase;
     color: var(--gold-dark);
   }
+
   .eyebrow-light {
     color: var(--gold);
   }
+
   .rule {
     display: inline-block;
     width: 40px;
@@ -143,6 +152,7 @@
     line-height: 1.02;
     letter-spacing: -0.02em;
   }
+
   .display-l {
     font-family: var(--font-display);
     font-weight: 300;
@@ -150,6 +160,7 @@
     line-height: 1.06;
     letter-spacing: -0.015em;
   }
+
   .heading-1 {
     font-family: var(--font-display);
     font-weight: 400;
@@ -157,6 +168,7 @@
     line-height: 1.1;
     letter-spacing: -0.01em;
   }
+
   .heading-2 {
     font-family: var(--font-display);
     font-weight: 400;
@@ -164,12 +176,14 @@
     line-height: 1.15;
     letter-spacing: -0.005em;
   }
+
   .heading-3 {
     font-family: var(--font-display);
     font-weight: 400;
     font-size: clamp(26px, 2.4vw, 32px);
     line-height: 1.25;
   }
+
   .lead {
     font-family: var(--font-sans);
     font-size: clamp(17px, 1.3vw, 20px);
@@ -186,25 +200,45 @@
     padding-left: 20px;
     padding-right: 20px;
   }
+
   @media (min-width: 768px) {
-    .container-x { padding-left: 40px; padding-right: 40px; }
+    .container-x {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
   }
+
   @media (min-width: 1024px) {
-    .container-x { padding-left: 60px; padding-right: 60px; }
+    .container-x {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
   }
+
   @media (min-width: 1280px) {
-    .container-x { padding-left: 80px; padding-right: 80px; }
+    .container-x {
+      padding-left: 80px;
+      padding-right: 80px;
+    }
   }
 
   .section-y {
     padding-top: 64px;
     padding-bottom: 64px;
   }
+
   @media (min-width: 768px) {
-    .section-y { padding-top: 96px; padding-bottom: 96px; }
+    .section-y {
+      padding-top: 96px;
+      padding-bottom: 96px;
+    }
   }
+
   @media (min-width: 1024px) {
-    .section-y { padding-top: 128px; padding-bottom: 128px; }
+    .section-y {
+      padding-top: 128px;
+      padding-bottom: 128px;
+    }
   }
 
   /* Buttons — luxury, restrained */
@@ -226,40 +260,48 @@
     white-space: nowrap;
     line-height: 1;
   }
+
   .btn-primary {
     background: var(--gold);
     color: var(--charcoal);
     border-color: var(--gold);
   }
+
   .btn-primary:hover {
     background: var(--gold-dark);
     border-color: var(--gold-dark);
     box-shadow: var(--shadow-cta);
     transform: translateY(-1px);
   }
+
   .btn-ghost {
     background: transparent;
     color: var(--charcoal);
     border-color: var(--charcoal);
   }
+
   .btn-ghost:hover {
     background: var(--charcoal);
     color: var(--warm-white);
   }
+
   .btn-ghost-light {
     background: transparent;
     color: var(--warm-white);
     border-color: var(--warm-white);
   }
+
   .btn-ghost-light:hover {
     background: var(--warm-white);
     color: var(--charcoal);
   }
+
   .btn-gold-outline {
     background: transparent;
     color: var(--gold);
     border-color: var(--gold);
   }
+
   .btn-gold-outline:hover {
     background: var(--gold);
     color: var(--charcoal);
@@ -279,6 +321,7 @@
     padding-bottom: 4px;
     transition: gap 0.35s var(--ease-smooth);
   }
+
   .link-arrow:hover {
     gap: 16px;
   }
@@ -289,6 +332,7 @@
     transform: translateY(24px);
     transition: opacity 0.9s var(--ease-enter), transform 0.9s var(--ease-enter);
   }
+
   .reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
@@ -298,6 +342,7 @@
   .project-card-img {
     transition: transform 1.4s var(--ease-enter);
   }
+
   .group:hover .project-card-img,
   .project-card:hover .project-card-img {
     transform: scale(1.04);
@@ -315,13 +360,16 @@
     color: var(--charcoal);
     transition: border-color 0.3s ease;
   }
+
   .field:focus {
     outline: none;
     border-bottom-color: var(--gold);
   }
+
   .field::placeholder {
     color: var(--mid-grey);
   }
+
   .field-label {
     display: block;
     font-size: 11px;
@@ -334,44 +382,89 @@
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@keyframes slowZoom {
-  from { transform: scale(1.08); }
-  to { transform: scale(1); }
-}
-.animate-fade-up { animation: fadeUp 1s var(--ease-enter) both; }
-.animate-fade-in { animation: fadeIn 1.4s var(--ease-enter) both; }
-.animate-slow-zoom { animation: slowZoom 8s var(--ease-enter) both; }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 
-.delay-100 { animation-delay: 0.1s; }
-.delay-200 { animation-delay: 0.2s; }
-.delay-300 { animation-delay: 0.3s; }
-.delay-400 { animation-delay: 0.4s; }
-.delay-500 { animation-delay: 0.5s; }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slowZoom {
+  from {
+    transform: scale(1.08);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 1s var(--ease-enter) both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1.4s var(--ease-enter) both;
+}
+
+.animate-slow-zoom {
+  animation: slowZoom 8s var(--ease-enter) both;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}
 
 /* Services grid — responsive */
 .services-grid {
   grid-template-columns: 1fr !important;
 }
+
 @media (min-width: 640px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
+
 @media (min-width: 768px) {
   .services-grid {
     grid-template-columns: repeat(3, 1fr) !important;
   }
 }
+
 @media (min-width: 1024px) {
   .services-grid {
-    grid-template-columns: repeat(5, 1fr) !important;
+    grid-template-columns: repeat(3, 1fr) !important;
   }
 }
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { STUDIO } from "@/lib/data";
 import {
   Select,
@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/select";
 
 export default function ConsultationForm() {
+  const formRef = useRef(null);
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -23,6 +24,22 @@ export default function ConsultationForm() {
     format: "In-studio",
     notes: "",
   });
+
+  useEffect(() => {
+    if (formRef.current) {
+      const timer = setTimeout(() => {
+        const headerOffset = 100; // Account for the fixed navbar height and spacing
+        const elementPosition = formRef.current.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }, 180);
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -81,7 +98,7 @@ export default function ConsultationForm() {
   };
 
   return (
-    <div className="p-6 sm:p-8 md:p-12 border" style={{ borderColor: "#e5e5e0", backgroundColor: "#ffffff" }}>
+    <div ref={formRef} className="p-6 sm:p-8 md:p-12 border" style={{ borderColor: "#e5e5e0", backgroundColor: "#ffffff" }}>
       {sent ? (
         <div className="py-12 text-center">
           <div className="font-display text-5xl mb-4" style={{ color: "#c9a86a" }}>✓</div>

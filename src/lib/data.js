@@ -51,14 +51,14 @@ export const projects = [
         gallery: [
             kitchen,
             luxuryKitchen,
-            serviceStorage,
+            "https://images.unsplash.com/photo-1556909211-36987daf7b4d?auto=format&fit=crop&w=800&q=80",
             "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80",
             "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1613546011790-78a0d2f09995?auto=format&fit=crop&w=800&q=80",
             "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80",
             "https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1565183997392-2f6f122e5912?auto=format&fit=crop&w=800&q=80"
+            "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80"
         ],
         vision: "An apartment kitchen for a family that entertains weekly. The client wanted the kitchen to act as both workshop and stage — quietly functional in daily use, theatrical when guests arrive.",
         approach: "Fluted dark walnut joinery wraps three walls; the island is a single slab of Calacatta. Brushed brass hardware, warm under-cabinet light, and a discreetly hidden pantry resolve the tension between calm and capability.",
@@ -82,10 +82,10 @@ export const projects = [
             serviceKids,
             "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=800&q=80",
             "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80",
             "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1617331140180-e8262094733a?auto=format&fit=crop&w=800&q=80",
             "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80"
         ],
         vision: "A primary bedroom for a couple who travel extensively. They wanted the room to feel like a private suite — restorative, hushed, free of digital intrusion.",
@@ -168,9 +168,9 @@ export const projects = [
             "https://images.unsplash.com/photo-1606744824163-985d376605aa?auto=format&fit=crop&w=800&q=80",
             "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
             "https://images.unsplash.com/photo-1618219973347-19aa82a2015e?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"
+            "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-149736216548-37526070297c?auto=format&fit=crop&w=800&q=80"
         ],
         vision: "A working library for a senior partner who reads three hours every morning. The room needed to hold 1,200 books, a working desk, and a lounge chair that genuinely invites sitting.",
         approach: "Built-in dark walnut shelving wraps two walls. A leather lounge chair anchors the corner. Lighting is layered: a brass desk lamp, a single floor lamp, and indirect cove warmth for the books.",

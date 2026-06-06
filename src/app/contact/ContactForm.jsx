@@ -80,7 +80,7 @@ export default function ContactForm() {
   return (
     <>
       {sent ? (
-        <div className="border p-10 text-center" style={{ borderColor: "#c9a86a" }}>
+        <div className="border p-6 sm:p-10 text-center" style={{ borderColor: "#c9a86a" }}>
           <h2 className="heading-3">Thank you.</h2>
           <p className="mt-4" style={{ color: "#6b6b6b" }}>
             We've received your enquiry and will respond within 4 business hours.

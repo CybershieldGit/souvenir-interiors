@@ -33,7 +33,7 @@ export default function About() {
 
       <section className="pb-24 md:pb-32">
         <div className="container-x">
-          <div className="aspect-[16/8] overflow-hidden">
+          <div className="aspect-[4/3] md:aspect-[16/8] overflow-hidden">
             <img src={getSrc(images.hero)} alt="Souvenir Interiors studio environment" className="w-full h-full object-cover" />
           </div>
         </div>

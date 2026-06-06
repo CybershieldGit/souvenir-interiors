@@ -139,7 +139,7 @@ export default function ServicesIndexPage() {
                     display: "flex",
                     flexDirection: "column",
                     height: "100%",
-                    borderRadius: 16,
+                    borderRadius: 0,
                     overflow: "hidden",
                     border: "1px solid #e5e5e0",
                     backgroundColor: "#ffffff",

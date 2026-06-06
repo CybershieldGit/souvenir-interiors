@@ -13,7 +13,9 @@ import serviceFurniture from "@/assets/service-furniture.png";
 import serviceTurnkey from "@/assets/service-turnkey.png";
 import serviceStorage from "@/assets/service-storage.png";
 import servicesHeaderDecor from "@/assets/services-header-decor.png";
-export const images = { hero, kitchen, bedroom, foyer, dining, materials, office, noor, servicesHeaderDecor };
+import serviceTerrace from "@/assets/service-terrace.png";
+import serviceKids from "@/assets/service-kids.png";
+export const images = { hero, kitchen, bedroom, foyer, dining, materials, office, noor, servicesHeaderDecor, serviceTerrace, serviceKids };
 export const projects = [
     //fhjhskfh
     {
@@ -191,6 +193,22 @@ export const services = [
         cover: bedroom,
     },
     {
+        slug: "kids-room-design",
+        name: "Kids Room Design",
+        shortName: "Kids Rooms",
+        tagline: "Bedrooms that grow with them, balancing play, study, and rest.",
+        intro: "Designing for children requires balancing imagination with practical longevity. We create rooms that feel magical now but adapt easily as they grow.",
+        scope: [
+            "Age-appropriate space planning",
+            "Custom bunk beds and study units",
+            "Safe and durable material selection",
+            "Integrated storage solutions",
+            "Playful yet timeless colour palettes",
+        ],
+        philosophy: "A child's room should inspire imagination while maintaining order.",
+        cover: serviceKids,
+    },
+    {
         slug: "false-ceiling-lighting-design",
         name: "False Ceiling & Lighting Design",
         shortName: "Ceilings & Lighting",
@@ -287,6 +305,22 @@ export const services = [
         ],
         philosophy: "A feature wall should reward you on the hundredth day, not just the first.",
         cover: dining,
+    },
+    {
+        slug: "terrace-design",
+        name: "Terrace & Balcony Design",
+        shortName: "Terrace Design",
+        tagline: "Outdoor spaces designed for entertaining, relaxing, and taking in the view.",
+        intro: "We transform terraces and balconies into functional extensions of your living space. From weather-resistant materials to ambient outdoor lighting, we design for the elements.",
+        scope: [
+            "Outdoor layout and zoning",
+            "Weather-resistant material selection",
+            "Custom planters and green walls",
+            "Outdoor lighting and power planning",
+            "Bespoke outdoor seating",
+        ],
+        philosophy: "An outdoor space should be as considered as an indoor one.",
+        cover: serviceTerrace,
     },
 ];
 export const STUDIO = {

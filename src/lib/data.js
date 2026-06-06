@@ -15,7 +15,11 @@ import serviceStorage from "@/assets/service-storage.png";
 import servicesHeaderDecor from "@/assets/services-header-decor.png";
 import serviceTerrace from "@/assets/service-terrace.png";
 import serviceKids from "@/assets/service-kids.png";
-export const images = { hero, kitchen, bedroom, foyer, dining, materials, office, noor, servicesHeaderDecor, serviceTerrace, serviceKids };
+import luxuryLiving from "@/assets/luxury-living.png";
+import luxuryKitchen from "@/assets/luxury-kitchen.png";
+import luxuryBedroom from "@/assets/luxury-bedroom.png";
+
+export const images = { hero, kitchen, bedroom, foyer, dining, materials, office, noor, servicesHeaderDecor, serviceTerrace, serviceKids, luxuryLiving, luxuryKitchen, luxuryBedroom };
 export const projects = [
     //fhjhskfh
     {
@@ -27,7 +31,7 @@ export const projects = [
         year: "2025",
         area: "3,200 sq ft",
         cover: hero,
-        gallery: [hero, dining, bedroom, materials],
+        gallery: [hero, dining, bedroom, materials, luxuryLiving, luxuryKitchen, luxuryBedroom, foyer, office, serviceTurnkey],
         vision: "A young family relocating from Singapore wanted a home that read as warm and grounded, but unmistakably modern. The challenge: a 3,200 sq ft villa on a corner plot with strong directional light that needed careful tempering.",
         approach: "We anchored the living spaces in travertine and dark walnut — materials that age with grace — then layered linen, brass, and hand-loomed textiles for warmth. Lighting was designed in three tiers so the home reads differently at every hour.",
         client: {
@@ -44,7 +48,18 @@ export const projects = [
         year: "2025",
         area: "320 sq ft",
         cover: kitchen,
-        gallery: [kitchen, materials, dining],
+        gallery: [
+            kitchen,
+            luxuryKitchen,
+            serviceStorage,
+            "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1565183997392-2f6f122e5912?auto=format&fit=crop&w=800&q=80"
+        ],
         vision: "An apartment kitchen for a family that entertains weekly. The client wanted the kitchen to act as both workshop and stage — quietly functional in daily use, theatrical when guests arrive.",
         approach: "Fluted dark walnut joinery wraps three walls; the island is a single slab of Calacatta. Brushed brass hardware, warm under-cabinet light, and a discreetly hidden pantry resolve the tension between calm and capability.",
         client: {
@@ -61,7 +76,18 @@ export const projects = [
         year: "2024",
         area: "480 sq ft",
         cover: bedroom,
-        gallery: [bedroom, materials, foyer],
+        gallery: [
+            bedroom,
+            luxuryBedroom,
+            serviceKids,
+            "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80"
+        ],
         vision: "A primary bedroom for a couple who travel extensively. They wanted the room to feel like a private suite — restorative, hushed, free of digital intrusion.",
         approach: "An upholstered taupe boucle wall reduces ambient noise and softens the geometry. Walnut floors, layered linens, and a single sculptural reading lamp do the rest. There is no overhead light — only pools of warmth.",
         client: {
@@ -78,7 +104,18 @@ export const projects = [
         year: "2024",
         area: "240 sq ft",
         cover: foyer,
-        gallery: [foyer, hero, dining],
+        gallery: [
+            foyer,
+            serviceTerrace,
+            serviceCeiling,
+            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1534349762230-e0cadf78f5da?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=800&q=80"
+        ],
         vision: "A foyer that needed to do three things: receive guests, resolve an awkward circular geometry, and signal — without ostentation — the quality of what lay beyond.",
         approach: "A curved travertine wall absorbs the geometry. A single sculptural console, one artwork, and a slim brass ceiling reveal are the only gestures. Restraint is what makes the moment land.",
         client: {
@@ -95,7 +132,18 @@ export const projects = [
         year: "2025",
         area: "360 sq ft",
         cover: dining,
-        gallery: [dining, hero, materials],
+        gallery: [
+            dining,
+            hero,
+            luxuryLiving,
+            serviceLivingRoom,
+            "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1615876234886-fd9a39fda97f?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80"
+        ],
         vision: "A formal dining room that needed to seat ten without feeling cavernous when it was just the family of four eating breakfast.",
         approach: "A solid oak table, a sculptural cluster chandelier, and a fluted screen that closes the room down to intimate scale on quiet nights. The art wall does the rest of the conversation.",
         client: {
@@ -112,7 +160,18 @@ export const projects = [
         year: "2024",
         area: "280 sq ft",
         cover: office,
-        gallery: [office, materials, foyer],
+        gallery: [
+            office,
+            serviceFurniture,
+            "https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1606744824163-985d376605aa?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1618219973347-19aa82a2015e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"
+        ],
         vision: "A working library for a senior partner who reads three hours every morning. The room needed to hold 1,200 books, a working desk, and a lounge chair that genuinely invites sitting.",
         approach: "Built-in dark walnut shelving wraps two walls. A leather lounge chair anchors the corner. Lighting is layered: a brass desk lamp, a single floor lamp, and indirect cove warmth for the books.",
         client: {

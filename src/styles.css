@@ -472,3 +472,38 @@
 .services-grid a:hover {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
 }
+
+/* Pinterest Masonry Grid */
+.pinterest-grid {
+  column-count: 1;
+  column-gap: 24px;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .pinterest-grid {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pinterest-grid {
+    column-count: 3;
+  }
+}
+
+.pinterest-item {
+  break-inside: avoid;
+  margin-bottom: 24px;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
+import { useState, useEffect } from "react";
 import { Reveal } from "@/components/site/Reveal";
 import { projects } from "@/lib/data";
 
@@ -11,6 +10,8 @@ const getSrc = (img) => (img && typeof img === "object" ? img.src : img);
 
 export default function PortfolioContent() {
   const [active, setActive] = useState("All");
+  const [selectedIndex, setSelectedIndex] = useState(null);
+
   const filtered = active === "All" ? projects : projects.filter((p) => p.category === active);
 
   // Compile all gallery images for the active category
@@ -26,6 +27,62 @@ export default function PortfolioContent() {
       });
     });
   }
+
+  // Define structured item list for lightbox browsing
+  const itemsToBrowse = active === "All"
+    ? filtered.map((p) => ({
+        image: getSrc(p.cover),
+        title: p.name,
+        subtitle: `${p.location} · ${p.type}`
+      }))
+    : galleryItems.map((item) => ({
+        image: getSrc(item.image),
+        title: item.project.name,
+        subtitle: item.project.type
+      }));
+
+  // Handlers for lightbox navigation
+  const handlePrev = () => {
+    if (selectedIndex === null) return;
+    setSelectedIndex((prev) => (prev > 0 ? prev - 1 : itemsToBrowse.length - 1));
+  };
+
+  const handleNext = () => {
+    if (selectedIndex === null) return;
+    setSelectedIndex((prev) => (prev < itemsToBrowse.length - 1 ? prev + 1 : 0));
+  };
+
+  const handleClose = () => {
+    setSelectedIndex(null);
+  };
+
+  // Keyboard navigation & scroll lock
+  useEffect(() => {
+    if (selectedIndex === null) return;
+
+    document.body.style.overflow = "hidden";
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        handleClose();
+      } else if (e.key === "ArrowLeft") {
+        handlePrev();
+      } else if (e.key === "ArrowRight") {
+        handleNext();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedIndex, itemsToBrowse]);
+
+  // Reset index when active filter changes
+  useEffect(() => {
+    setSelectedIndex(null);
+  }, [active]);
 
   return (
     <>
@@ -55,7 +112,18 @@ export default function PortfolioContent() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
               {filtered.map((p, i) => (
                 <Reveal key={p.slug} delay={(i % 3) * 80}>
-                  <Link href={`/portfolio/${p.slug}`} className="group block">
+                  <div
+                    onClick={() => setSelectedIndex(i)}
+                    className="group block cursor-pointer"
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        setSelectedIndex(i);
+                      }
+                    }}
+                  >
                     <div className="aspect-[4/5] overflow-hidden bg-surface" style={{ backgroundColor: "#f5f3ef" }}>
                       <img src={getSrc(p.cover)} alt={p.name} loading="lazy" className="project-card-img w-full h-full object-cover" />
                     </div>
@@ -65,7 +133,7 @@ export default function PortfolioContent() {
                         {p.location} · {p.type}
                       </div>
                     </div>
-                  </Link>
+                  </div>
                 </Reveal>
               ))}
             </div>
@@ -74,7 +142,18 @@ export default function PortfolioContent() {
             <div className="pinterest-grid">
               {galleryItems.map((item, i) => (
                 <Reveal key={item.id} delay={(i % 3) * 80} className="pinterest-item">
-                  <Link href={`/portfolio/${item.project.slug}`} className="group block relative overflow-hidden">
+                  <div
+                    onClick={() => setSelectedIndex(i)}
+                    className="group block relative overflow-hidden cursor-pointer"
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        setSelectedIndex(i);
+                      }
+                    }}
+                  >
                     <div className="overflow-hidden bg-surface" style={{ backgroundColor: "#f5f3ef" }}>
                       <img
                         src={getSrc(item.image)}
@@ -85,15 +164,12 @@ export default function PortfolioContent() {
                     </div>
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
-                      <div className="text-xs uppercase tracking-[0.14em] text-gold font-semibold">
+                      <div className="text-xs uppercase tracking-[0.14em] text-gold font-semibold" style={{ color: "#c9a86a" }}>
                         {item.project.type}
                       </div>
                       <h3 className="font-display text-xl mt-1 text-white">{item.project.name}</h3>
-                      <div className="text-xs mt-3 opacity-80 underline tracking-[0.1em] uppercase">
-                        View Project →
-                      </div>
                     </div>
-                  </Link>
+                  </div>
                 </Reveal>
               ))}
             </div>
@@ -106,6 +182,89 @@ export default function PortfolioContent() {
           )}
         </div>
       </section>
+
+      {/* Lightbox Modal */}
+      {selectedIndex !== null && itemsToBrowse[selectedIndex] && (
+        <div
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black/95 backdrop-blur-md transition-opacity duration-300"
+          onClick={handleClose}
+        >
+          {/* Close button */}
+          <button
+            className="absolute top-6 right-6 z-[110] p-3 rounded-full bg-white/5 text-white/70 hover:text-white hover:bg-white/10 transition-all duration-200 cursor-pointer"
+            onClick={(e) => {
+              e.stopPropagation();
+              handleClose();
+            }}
+            aria-label="Close Lightbox"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          {/* Left Arrow */}
+          {itemsToBrowse.length > 1 && (
+            <button
+              className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-[110] p-4 rounded-full bg-white/5 text-white/70 hover:text-white hover:bg-white/10 transition-all duration-200 cursor-pointer"
+              onClick={(e) => {
+                e.stopPropagation();
+                handlePrev();
+              }}
+              aria-label="Previous Image"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+          )}
+
+          {/* Right Arrow */}
+          {itemsToBrowse.length > 1 && (
+            <button
+              className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-[110] p-4 rounded-full bg-white/5 text-white/70 hover:text-white hover:bg-white/10 transition-all duration-200 cursor-pointer"
+              onClick={(e) => {
+                e.stopPropagation();
+                handleNext();
+              }}
+              aria-label="Next Image"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          )}
+
+          {/* Modal Container */}
+          <div
+            className="flex flex-col items-center justify-center max-w-[90vw] max-h-[85vh] md:max-h-[80vh] px-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Image display */}
+            <div className="relative overflow-hidden bg-neutral-900 rounded-sm shadow-2xl flex items-center justify-center max-h-[60vh] md:max-h-[65vh]">
+              <img
+                src={itemsToBrowse[selectedIndex].image}
+                alt={itemsToBrowse[selectedIndex].title}
+                className="max-w-full max-h-[60vh] md:max-h-[65vh] object-contain select-none scale-100"
+                style={{ animation: "fadeInScale 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards" }}
+              />
+            </div>
+
+            {/* Captions */}
+            <div className="mt-6 text-center max-w-2xl px-4">
+              <h4 className="font-display text-xl md:text-2xl text-white tracking-wide">
+                {itemsToBrowse[selectedIndex].title}
+              </h4>
+              <p className="mt-1 text-xs md:text-sm uppercase tracking-[0.15em]" style={{ color: "#c9a86a" }}>
+                {itemsToBrowse[selectedIndex].subtitle}
+              </p>
+              <div className="mt-3 text-[10px] md:text-xs tracking-widest text-neutral-500 uppercase font-semibold">
+                {selectedIndex + 1} / {itemsToBrowse.length}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

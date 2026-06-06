@@ -7,7 +7,13 @@ import dining from "@/assets/project-dining.jpg";
 import materials from "@/assets/materials.jpg";
 import office from "@/assets/project-office.jpg";
 import noor from "@/assets/portrait-noor.jpg";
-export const images = { hero, kitchen, bedroom, foyer, dining, materials, office, noor };
+import serviceLivingRoom from "@/assets/service-living-room.png";
+import serviceCeiling from "@/assets/service-ceiling.png";
+import serviceFurniture from "@/assets/service-furniture.png";
+import serviceTurnkey from "@/assets/service-turnkey.png";
+import serviceStorage from "@/assets/service-storage.png";
+import servicesHeaderDecor from "@/assets/services-header-decor.png";
+export const images = { hero, kitchen, bedroom, foyer, dining, materials, office, noor, servicesHeaderDecor };
 export const projects = [
     //fhjhskfh
     {
@@ -165,7 +171,7 @@ export const services = [
             "Acoustic and material balance",
         ],
         philosophy: "A living room is the only room everyone in the family uses every day. It must feel inevitable.",
-        cover: dining,
+        cover: serviceLivingRoom,
     },
     {
         slug: "luxury-bedroom-design",
@@ -198,7 +204,7 @@ export const services = [
             "Daylight and circadian planning",
         ],
         philosophy: "A room is what its light makes it.",
-        cover: foyer,
+        cover: serviceCeiling,
     },
     {
         slug: "custom-furniture-design",
@@ -214,7 +220,7 @@ export const services = [
             "On-site installation and finishing",
         ],
         philosophy: "Bespoke is the original sustainability. Build it once, build it right.",
-        cover: materials,
+        cover: serviceFurniture,
     },
     {
         slug: "turnkey-interior-solutions",
@@ -232,7 +238,7 @@ export const services = [
             "Documented warranty and care guide",
         ],
         philosophy: "Turnkey means one number to call, one team to trust, one date to count down to.",
-        cover: hero,
+        cover: serviceTurnkey,
     },
     {
         slug: "office-commercial-interiors",
@@ -264,7 +270,7 @@ export const services = [
             "Implementation drawings",
         ],
         philosophy: "Storage is the most luxurious thing in a home. It is what creates the calm.",
-        cover: bedroom,
+        cover: serviceStorage,
     },
     {
         slug: "tv-unit-feature-wall-design",

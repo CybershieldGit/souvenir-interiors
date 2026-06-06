@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal } from "@/components/site/Reveal";
-import { services } from "@/lib/data";
+import { services, images } from "@/lib/data";
 import { ArrowRight } from "lucide-react";
 
 export const metadata = {
@@ -15,70 +15,256 @@ export const metadata = {
   },
 };
 
+const getSrc = (img) => (img && typeof img === "object" ? img.src : img);
+
 export default function ServicesIndexPage() {
   return (
     <SiteLayout>
-      <section className="pt-40 md:pt-48 pb-16 md:pb-24">
-        <div className="container-x">
+      {/* ─── Hero / Header ─── */}
+      <section 
+        className="relative pt-40 md:pt-48 pb-16 md:pb-24 overflow-hidden"
+        style={{
+          background: "linear-gradient(180deg, #f2e9e0 0%, #faf8f5 100%)"
+        }}
+      >
+        {/* Decorative side image — desktop only */}
+        <div
+          className="hidden lg:block absolute right-0"
+          style={{ 
+            top: "5%",
+            width: 450, 
+            height: 500, 
+            opacity: 0.9,
+            mixBlendMode: "darken",
+            WebkitMaskImage: "radial-gradient(ellipse 80% 60% at 100% 60%, black 20%, transparent 100%)",
+            maskImage: "radial-gradient(ellipse 80% 60% at 100% 60%, black 20%, transparent 100%)"
+          }}
+        >
+          <img
+            src={getSrc(images.servicesHeaderDecor)}
+            alt=""
+            style={{ 
+              width: "100%", 
+              height: "100%", 
+              objectFit: "cover",
+              objectPosition: "right 60%"
+            }}
+          />
+        </div>
+
+        <div className="container-x relative z-10">
           <Reveal>
-            <div className="eyebrow mb-6"><span className="rule" /> What We Do</div>
-            <h1 className="display-l max-w-4xl">
-              Luxury interior design services in <em className="italic">Delhi NCR.</em>
-            </h1>
-            <p className="lead mt-10 max-w-2xl">
-              Every service we offer is an integrated part of a complete design vision. Whether you
-              are transforming a single room or commissioning a full-scale home, our approach combines
-              senior design expertise, premium material sourcing, and precision execution — managed
-              end-to-end by a team that has been doing this for over three decades.
-            </p>
+            <div className="text-center" style={{ maxWidth: 640, margin: "0 auto" }}>
+              {/* Eyebrow */}
+              <div
+                style={{
+                  fontSize: 11,
+                  fontWeight: 600,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: "#c9a86a",
+                  marginBottom: 20,
+                }}
+              >
+                Services
+              </div>
+
+              {/* Heading */}
+              <h1
+                className="font-display"
+                style={{
+                  fontSize: "clamp(44px, 6vw, 72px)",
+                  fontWeight: 300,
+                  lineHeight: 1.06,
+                  color: "#1a1a1a",
+                }}
+              >
+                Our Services
+              </h1>
+
+              {/* Description */}
+              <p
+                style={{
+                  marginTop: 24,
+                  fontSize: 16,
+                  lineHeight: 1.7,
+                  color: "#6b6b6b",
+                  maxWidth: 520,
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
+              >
+                From concept to completion, we craft beautiful, functional spaces
+                that reflect your style and elevate the way you live and work.
+              </p>
+
+              {/* Gold diamond divider */}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 12,
+                  marginTop: 32,
+                }}
+              >
+                <span style={{ display: "block", width: 48, height: 1, backgroundColor: "#c9a86a" }} />
+                <span
+                  style={{
+                    display: "block",
+                    width: 10,
+                    height: 10,
+                    backgroundColor: "#c9a86a",
+                    transform: "rotate(45deg)",
+                  }}
+                />
+                <span style={{ display: "block", width: 48, height: 1, backgroundColor: "#c9a86a" }} />
+              </div>
+            </div>
           </Reveal>
         </div>
       </section>
 
-      <section className="pb-24 md:pb-32">
+      {/* ─── Services Grid ─── */}
+      <section style={{ paddingBottom: 96 }}>
         <div className="container-x">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px" style={{ backgroundColor: "#e5e5e0" }}>
-            {services.map((s, i) => (
-              <Reveal key={s.slug} delay={(i % 4) * 60}>
+          <Reveal>
+            <div className="services-grid" style={{ display: "grid", gap: 24 }}>
+              {services.map((s, i) => (
                 <Link
+                  key={s.slug}
                   href={`/services/${s.slug}`}
-                  className="group block h-full p-8 md:p-12 transition-colors"
-                  style={{ backgroundColor: "#faf8f5" }}
+                  className="group service-card"
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    height: "100%",
+                    borderRadius: 16,
+                    overflow: "hidden",
+                    border: "1px solid #e5e5e0",
+                    backgroundColor: "#ffffff",
+                    textDecoration: "none",
+                    transition: "box-shadow 0.3s ease",
+                  }}
                 >
-                  <div className="flex items-start justify-between gap-8">
-                    <div className="flex-1">
-                      <div className="text-xs uppercase tracking-[0.14em] mb-4" style={{ color: "#c9a86a" }}>
-                        Service · {String(i + 1).padStart(2, "0")}
-                      </div>
-                      <h2 className="font-display text-3xl md:text-4xl group-hover:text-gold transition-colors" style={{ color: "#1a1a1a" }}>
-                        {s.name}
-                      </h2>
-                      <p className="mt-5 leading-relaxed max-w-md" style={{ color: "#6b6b6b" }}>
-                        {s.tagline}
-                      </p>
-                      <span className="inline-flex items-center gap-2 mt-8 text-xs uppercase tracking-[0.14em] font-semibold" style={{ color: "#c9a86a" }}>
-                        Explore <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                      </span>
+                  {/* Card Image */}
+                  <div
+                    style={{
+                      width: "100%",
+                      aspectRatio: "4/3",
+                      overflow: "hidden",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <img
+                      src={getSrc(s.cover)}
+                      alt={s.name}
+                      loading={i < 5 ? "eager" : "lazy"}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        display: "block",
+                        transition: "transform 0.7s ease",
+                      }}
+                      className="group-hover:scale-105"
+                    />
+                  </div>
+
+                  {/* Card Body */}
+                  <div style={{ padding: 20, display: "flex", flexDirection: "column", flex: 1 }}>
+                    {/* Service index */}
+                    <div
+                      style={{
+                        fontSize: 10,
+                        fontWeight: 600,
+                        letterSpacing: "0.16em",
+                        textTransform: "uppercase",
+                        color: "#c9a86a",
+                        marginBottom: 8,
+                      }}
+                    >
+                      Service · {String(i + 1).padStart(2, "0")}
                     </div>
+
+                    {/* Service name */}
+                    <h2
+                      className="font-display group-hover:text-gold transition-colors"
+                      style={{
+                        fontSize: 18,
+                        lineHeight: 1.3,
+                        color: "#1a1a1a",
+                        margin: 0,
+                      }}
+                    >
+                      {s.name}
+                    </h2>
+
+                    {/* Tagline */}
+                    <p
+                      style={{
+                        marginTop: 8,
+                        fontSize: 13,
+                        lineHeight: 1.6,
+                        color: "#6b6b6b",
+                        flex: 1,
+                        display: "-webkit-box",
+                        WebkitLineClamp: 3,
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                      }}
+                    >
+                      {s.tagline}
+                    </p>
+
+                    {/* Explore link */}
+                    <span
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: 6,
+                        marginTop: 16,
+                        fontSize: 11,
+                        fontWeight: 600,
+                        letterSpacing: "0.14em",
+                        textTransform: "uppercase",
+                        color: "#c9a86a",
+                      }}
+                    >
+                      Explore
+                      <ArrowRight
+                        size={12}
+                        className="group-hover:translate-x-1 transition-transform"
+                      />
+                    </span>
                   </div>
                 </Link>
-              </Reveal>
-            ))}
-          </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 
-      <section className="section-y text-center" style={{ backgroundColor: "#1a1a1a", color: "#faf8f5" }}>
+      {/* ─── CTA ─── */}
+      <section
+        className="section-y text-center"
+        style={{ backgroundColor: "#1a1a1a", color: "#faf8f5" }}
+      >
         <div className="container-x">
           <Reveal>
             <h2 className="display-l max-w-3xl mx-auto" style={{ color: "#faf8f5" }}>
               Not sure where to begin?
             </h2>
-            <p className="lead mt-6 mx-auto max-w-xl" style={{ color: "rgba(250,248,245,0.8)" }}>
+            <p
+              className="lead mt-6 mx-auto max-w-xl"
+              style={{ color: "rgba(250,248,245,0.8)" }}
+            >
               A complimentary consultation is the simplest place to start. We will help define the
               scope and the right service for your project.
             </p>
-            <Link href="/consultation" className="btn btn-primary mt-10">Schedule A Consultation</Link>
+            <Link href="/consultation" className="btn btn-primary mt-10">
+              Schedule A Consultation
+            </Link>
           </Reveal>
         </div>
       </section>

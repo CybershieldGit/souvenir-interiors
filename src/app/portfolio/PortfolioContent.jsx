@@ -259,7 +259,6 @@ export default function PortfolioContent() {
                       <div className="text-xs uppercase tracking-[0.14em] text-gold font-semibold" style={{ color: "#c9a86a" }}>
                         {item.project.type}
                       </div>
-                      <h3 className="font-display text-xl mt-1 text-white">{item.project.name}</h3>
                     </div>
                   </div>
                 </Reveal>

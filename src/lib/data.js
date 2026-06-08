@@ -164,10 +164,8 @@ export const projects = [
             "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80",
             "https://images.unsplash.com/photo-1606744824163-985d376605aa?auto=format&fit=crop&w=800&q=80",
             "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1618219973347-19aa82a2015e?auto=format&fit=crop&w=800&q=80",
             "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-149736216548-37526070297c?auto=format&fit=crop&w=800&q=80"
+            "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80"
         ],
         vision: "A working library for a senior partner who reads three hours every morning. The room needed to hold 1,200 books, a working desk, and a lounge chair that genuinely invites sitting.",
         approach: "Built-in dark walnut shelving wraps two walls. A leather lounge chair anchors the corner. Lighting is layered: a brass desk lamp, a single floor lamp, and indirect cove warmth for the books.",

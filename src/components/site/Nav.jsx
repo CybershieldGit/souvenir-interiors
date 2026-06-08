@@ -53,8 +53,8 @@ export function Nav() {
               href={`https://wa.me/${STUDIO.whatsapp.replace("+","")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-gold-outline flex items-center gap-2"
-              style={{ padding: "14px 24px", fontSize: 12 }}
+              className="btn btn-gold-outline flex items-center justify-center gap-2"
+              style={{ height: "46px", padding: "0 24px", fontSize: 12 }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +68,7 @@ export function Nav() {
               </svg>
               WhatsApp
             </a>
-            <Link href="/consultation" className="btn btn-gold-outline" style={{ padding: "14px 24px", fontSize: 12 }}>
+            <Link href="/consultation" className="btn btn-gold-outline flex items-center justify-center" style={{ height: "46px", padding: "0 24px", fontSize: 12 }}>
               Schedule Consultation
             </Link>
           </nav>

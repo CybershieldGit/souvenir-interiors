@@ -4,19 +4,45 @@ import { useState, useEffect } from "react";
 import { Reveal } from "@/components/site/Reveal";
 import { projects } from "@/lib/data";
 
-const filters = ["All", "Residential", "Kitchens", "Living Rooms", "Bedrooms", "Offices", "Turnkey"];
+const filters = ["All", "Residential", "Kitchens", "Living Rooms", "Bedrooms", "Offices", "Videos"];
 
 const getSrc = (img) => (img && typeof img === "object" ? img.src : img);
 
 export default function PortfolioContent() {
   const [active, setActive] = useState("All");
   const [selectedIndex, setSelectedIndex] = useState(null);
+  const [videoData, setVideoData] = useState({});
+
+  useEffect(() => {
+    const fetchVideoInfo = async (key, videoUrl) => {
+      try {
+        const response = await fetch(`https://noembed.com/embed?url=${encodeURIComponent(videoUrl)}`);
+        if (response.ok) {
+          const data = await response.json();
+          if (data && data.title) {
+            setVideoData((prev) => ({
+              ...prev,
+              [key]: {
+                title: data.title,
+                author: data.author_name || "YouTube Creator",
+              },
+            }));
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching video oembed data:", error);
+      }
+    };
+
+    fetchVideoInfo("video1", "https://www.youtube.com/watch?v=1muP_POgVd0");
+    fetchVideoInfo("video2", "https://www.youtube.com/watch?v=hmtQbL7AA0I");
+  }, []);
 
   const filtered = active === "All" ? projects : projects.filter((p) => p.category === active);
 
   // Compile all gallery images for the active category
   const galleryItems = [];
-  if (active !== "All") {
+  if (active !== "All" && active !== "Videos") {
     filtered.forEach((project) => {
       project.gallery.forEach((img, index) => {
         galleryItems.push({
@@ -137,6 +163,72 @@ export default function PortfolioContent() {
                 </Reveal>
               ))}
             </div>
+          ) : active === "Videos" ? (
+            /* Video Section (YouTube Embeds) */
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+              <Reveal delay={100}>
+                <div>
+                  <div className="aspect-video w-full overflow-hidden bg-surface rounded-sm shadow-xl border" style={{ backgroundColor: "#000", borderColor: "#e5e5e0" }}>
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src="https://www.youtube.com/embed/1muP_POgVd0?si=pO92MkSagEX6Dkfi"
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                      className="w-full h-full"
+                    ></iframe>
+                  </div>
+                  <div className="mt-6">
+                    <span className="text-xs uppercase tracking-[0.14em] font-semibold" style={{ color: "#c9a86a" }}>
+                      Featured Walkthrough
+                    </span>
+                    <h3 className="font-display text-2xl mt-1 text-neutral-900">
+                      {videoData.video1?.title || "Souvenir Interiors Signature Tour"}
+                    </h3>
+                    <p className="mt-3 text-sm text-neutral-600 leading-relaxed font-sans">
+                      {videoData.video1 
+                        ? `Published by ${videoData.video1.author} · YouTube Feature` 
+                        : "Take a detailed look at our completed premium projects, showcasing the high-end materials, execution quality, and bespoke layouts designed for modern living."
+                      }
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+              <Reveal delay={200}>
+                <div>
+                  <div className="aspect-video w-full overflow-hidden bg-surface rounded-sm shadow-xl border" style={{ backgroundColor: "#000", borderColor: "#e5e5e0" }}>
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src="https://www.youtube.com/embed/hmtQbL7AA0I?si=pqDnVCewBqNZLx-1"
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                      className="w-full h-full"
+                    ></iframe>
+                  </div>
+                  <div className="mt-6">
+                    <span className="text-xs uppercase tracking-[0.14em] font-semibold" style={{ color: "#c9a86a" }}>
+                      Project Showcase
+                    </span>
+                    <h3 className="font-display text-2xl mt-1 text-neutral-900">
+                      {videoData.video2?.title || "Craftsmanship & Design Tour"}
+                    </h3>
+                    <p className="mt-3 text-sm text-neutral-600 leading-relaxed font-sans">
+                      {videoData.video2 
+                        ? `Published by ${videoData.video2.author} · YouTube Feature` 
+                        : "An inside look at our design process, meticulous material selection, and site executions, showing what makes a Souvenir project truly stand out."
+                      }
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+            </div>
           ) : (
             /* Pinterest Masonry Grid of gallery images */
             <div className="pinterest-grid">
@@ -175,7 +267,7 @@ export default function PortfolioContent() {
             </div>
           )}
 
-          {filtered.length === 0 && (
+          {filtered.length === 0 && active !== "Videos" && (
             <p className="text-center py-20 text-mid-grey" style={{ color: "#6b6b6b" }}>
               No projects in this category yet. Please check back soon.
             </p>

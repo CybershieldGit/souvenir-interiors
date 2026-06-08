@@ -27,7 +27,7 @@ export const projects = [
         name: "The Travertine Villa",
         location: "Greater Noida West",
         type: "Turnkey Residential",
-        category: "Turnkey",
+        category: "Residential",
         year: "2025",
         area: "3,200 sq ft",
         cover: hero,
@@ -79,13 +79,10 @@ export const projects = [
         gallery: [
             bedroom,
             luxuryBedroom,
-            serviceKids,
             "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80",
             "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80",
             "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80",
             "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1617331140180-e8262094733a?auto=format&fit=crop&w=800&q=80",
             "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80"
         ],
         vision: "A primary bedroom for a couple who travel extensively. They wanted the room to feel like a private suite — restorative, hushed, free of digital intrusion.",
@@ -391,3 +388,30 @@ export const STUDIO = {
     addressLine2: "Opposite Gaur City Mall, Greater Noida West",
     hours: "Mon–Sat · 10:00 AM – 7:00 PM",
 };
+
+export const videos = [
+    {
+        id: "video-1",
+        title: "The Travertine Villa — Walkthrough",
+        description: "A complete cinematic walkthrough of the 3,200 sq ft modern villa featuring natural travertine details, dark walnut paneling, and layered lighting design.",
+        url: "https://assets.mixkit.co/videos/preview/mixkit-interior-of-a-modern-living-room-with-plants-41956-large.mp4",
+        duration: "0:45",
+        category: "Residential"
+    },
+    {
+        id: "video-2",
+        title: "Fluted Walnut Kitchen — Details & Hardware",
+        description: "Explore the custom modular kitchen layout, showing the Calacatta island, integrated brass fixtures, and fluted joinery in motion.",
+        url: "https://assets.mixkit.co/videos/preview/mixkit-kitchen-in-a-modern-home-41958-large.mp4",
+        duration: "0:30",
+        category: "Kitchens"
+    },
+    {
+        id: "video-3",
+        title: "The Soft Room — Sanctuary Experience",
+        description: "Experience the calming ambient mood of the master bedroom, showcasing the upholstered bouclé wall and warm, indirect lighting design.",
+        url: "https://assets.mixkit.co/videos/preview/mixkit-bedroom-interior-of-a-contemporary-house-41960-large.mp4",
+        duration: "0:40",
+        category: "Bedrooms"
+    }
+];

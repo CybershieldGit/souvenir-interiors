@@ -34,8 +34,11 @@ export default function PortfolioContent() {
       }
     };
 
-    fetchVideoInfo("video1", "https://www.youtube.com/watch?v=1muP_POgVd0");
-    fetchVideoInfo("video2", "https://www.youtube.com/watch?v=hmtQbL7AA0I");
+    fetchVideoInfo("video1", "https://www.youtube.com/watch?v=_XuJHpX-Rp8");
+    fetchVideoInfo("video2", "https://www.youtube.com/watch?v=T3zNH138PH0");
+    fetchVideoInfo("video3", "https://www.youtube.com/watch?v=tYzXidefvKQ");
+    fetchVideoInfo("video4", "https://www.youtube.com/watch?v=qSC77KuVOZY");
+    fetchVideoInfo("video5", "https://www.youtube.com/watch?v=1_Eq0X8U2wc");
   }, []);
 
   const filtered = active === "All" ? projects : projects.filter((p) => p.category === active);
@@ -165,66 +168,83 @@ export default function PortfolioContent() {
             </div>
           ) : active === "Videos" ? (
             /* Video Section (YouTube Embeds) */
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-              <Reveal delay={100}>
-                <div>
-                  <div className="aspect-video w-full overflow-hidden bg-surface rounded-sm shadow-xl border" style={{ backgroundColor: "#000", borderColor: "#e5e5e0" }}>
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src="https://www.youtube.com/embed/1muP_POgVd0?si=pO92MkSagEX6Dkfi"
-                      title="YouTube video player"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      allowFullScreen
-                      className="w-full h-full"
-                    ></iframe>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 w-full">
+              <Reveal delay={0}>
+                <div className="group block">
+                  <div className="aspect-video w-full overflow-hidden bg-surface border" style={{ backgroundColor: "#000", borderColor: "#e5e5e0" }}>
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/_XuJHpX-Rp8?si=aYsCCu_0vA3mI_gU" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                   </div>
-                  <div className="mt-6">
-                    <span className="text-xs uppercase tracking-[0.14em] font-semibold" style={{ color: "#c9a86a" }}>
-                      Featured Walkthrough
-                    </span>
-                    <h3 className="font-display text-2xl mt-1 text-neutral-900">
-                      {videoData.video1?.title || "Souvenir Interiors Signature Tour"}
+                  <div className="pt-5 text-left">
+                    <h3 className="font-display text-2xl text-neutral-900">
+                      {videoData.video1?.title || "Bespoke TV Cabinets"}
                     </h3>
-                    <p className="mt-3 text-sm text-neutral-600 leading-relaxed font-sans">
-                      {videoData.video1 
-                        ? `Published by ${videoData.video1.author} · YouTube Feature` 
-                        : "Take a detailed look at our completed premium projects, showcasing the high-end materials, execution quality, and bespoke layouts designed for modern living."
-                      }
-                    </p>
+                    <div className="mt-1 text-xs uppercase tracking-[0.14em]" style={{ color: "#6b6b6b" }}>
+                      Project Showcase
+                    </div>
                   </div>
                 </div>
               </Reveal>
-              <Reveal delay={200}>
-                <div>
-                  <div className="aspect-video w-full overflow-hidden bg-surface rounded-sm shadow-xl border" style={{ backgroundColor: "#000", borderColor: "#e5e5e0" }}>
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src="https://www.youtube.com/embed/hmtQbL7AA0I?si=pqDnVCewBqNZLx-1"
-                      title="YouTube video player"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      allowFullScreen
-                      className="w-full h-full"
-                    ></iframe>
+
+              <Reveal delay={80}>
+                <div className="group block">
+                  <div className="aspect-video w-full overflow-hidden bg-surface border" style={{ backgroundColor: "#000", borderColor: "#e5e5e0" }}>
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/T3zNH138PH0?si=f-d3vCXtmwzX6tSg" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                   </div>
-                  <div className="mt-6">
-                    <span className="text-xs uppercase tracking-[0.14em] font-semibold" style={{ color: "#c9a86a" }}>
-                      Project Showcase
-                    </span>
-                    <h3 className="font-display text-2xl mt-1 text-neutral-900">
-                      {videoData.video2?.title || "Craftsmanship & Design Tour"}
+                  <div className="pt-5 text-left">
+                    <h3 className="font-display text-2xl text-neutral-900">
+                      {videoData.video2?.title || "Interior Walkthrough"}
                     </h3>
-                    <p className="mt-3 text-sm text-neutral-600 leading-relaxed font-sans">
-                      {videoData.video2 
-                        ? `Published by ${videoData.video2.author} · YouTube Feature` 
-                        : "An inside look at our design process, meticulous material selection, and site executions, showing what makes a Souvenir project truly stand out."
-                      }
-                    </p>
+                    <div className="mt-1 text-xs uppercase tracking-[0.14em]" style={{ color: "#6b6b6b" }}>
+                      Project Showcase
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+
+              <Reveal delay={160}>
+                <div className="group block">
+                  <div className="aspect-video w-full overflow-hidden bg-surface border" style={{ backgroundColor: "#000", borderColor: "#e5e5e0" }}>
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/tYzXidefvKQ?si=TxxPxbYnBEV0eecW" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                  </div>
+                  <div className="pt-5 text-left">
+                    <h3 className="font-display text-2xl text-neutral-900">
+                      {videoData.video3?.title || "Design Details"}
+                    </h3>
+                    <div className="mt-1 text-xs uppercase tracking-[0.14em]" style={{ color: "#6b6b6b" }}>
+                      Project Showcase
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+
+              <Reveal delay={240}>
+                <div className="group block">
+                  <div className="aspect-video w-full overflow-hidden bg-surface border" style={{ backgroundColor: "#000", borderColor: "#e5e5e0" }}>
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/qSC77KuVOZY?si=sXLKU2YMVr41U4Lq" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                  </div>
+                  <div className="pt-5 text-left">
+                    <h3 className="font-display text-2xl text-neutral-900">
+                      {videoData.video4?.title || "Project Feature"}
+                    </h3>
+                    <div className="mt-1 text-xs uppercase tracking-[0.14em]" style={{ color: "#6b6b6b" }}>
+                      Project Showcase
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+
+              <Reveal delay={320}>
+                <div className="group block">
+                  <div className="aspect-video w-full overflow-hidden bg-surface border" style={{ backgroundColor: "#000", borderColor: "#e5e5e0" }}>
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/1_Eq0X8U2wc?si=GwsjAhDXLS1H9LZq" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                  </div>
+                  <div className="pt-5 text-left">
+                    <h3 className="font-display text-2xl text-neutral-900">
+                      {videoData.video5?.title || "Interior Highlight"}
+                    </h3>
+                    <div className="mt-1 text-xs uppercase tracking-[0.14em]" style={{ color: "#6b6b6b" }}>
+                      Project Showcase
+                    </div>
                   </div>
                 </div>
               </Reveal>

@@ -1,42 +1,51 @@
-// Centralised content data — swap images and copy here without touching components.
-import hero from "@/assets/hero-living.jpg";
-import kitchen from "@/assets/project-kitchen.jpg";
-import bedroom from "@/assets/project-bedroom.jpg";
-import foyer from "@/assets/project-foyer.jpg";
-import dining from "@/assets/project-dining.jpg";
-import materials from "@/assets/materials.jpg";
-import office from "@/assets/project-office.jpg";
+import indianLuxuryLiving from "@/assets/indian_luxury_living.png";
+import indianLuxuryBedroom from "@/assets/indian_luxury_bedroom.png";
+import indianLuxuryKitchen from "@/assets/indian_luxury_kitchen.png";
+import indianLuxuryTvUnit from "@/assets/indian_luxury_tv_unit.png";
+import indianLuxuryFoyer from "@/assets/indian_luxury_foyer.png";
+import indianLuxuryDining from "@/assets/indian_luxury_dining.png";
+import indianLuxuryOffice from "@/assets/indian_luxury_office.png";
+import indianLuxuryBalcony from "@/assets/indian_luxury_balcony.png";
 import noor from "@/assets/portrait-noor.jpg";
-import serviceLivingRoom from "@/assets/service-living-room.png";
-import serviceCeiling from "@/assets/service-ceiling.png";
-import serviceFurniture from "@/assets/service-furniture.png";
-import serviceTurnkey from "@/assets/service-turnkey.png";
-import serviceStorage from "@/assets/service-storage.png";
-import servicesHeaderDecor from "@/assets/services-header-decor.png";
-import serviceTerrace from "@/assets/service-terrace.png";
-import serviceKids from "@/assets/service-kids.png";
-import luxuryLiving from "@/assets/luxury-living.png";
-import luxuryKitchen from "@/assets/luxury-kitchen.png";
-import luxuryBedroom from "@/assets/luxury-bedroom.png";
+import userHome1 from "@/assets/user_home_1.jpg";
+import userHome2 from "@/assets/user_home_2.jpg";
+import userHome3 from "@/assets/user_home_3.jpg";
+import userHome4 from "@/assets/user_home_4.jpg";
+import userHome5 from "@/assets/user_home_5.jpg";
+import projectOffice from "@/assets/project-office.jpg";
 
-export const images = { hero, kitchen, bedroom, foyer, dining, materials, office, noor, servicesHeaderDecor, serviceTerrace, serviceKids, luxuryLiving, luxuryKitchen, luxuryBedroom };
+export const images = {
+    hero: userHome1,
+    kitchen: indianLuxuryKitchen,
+    bedroom: userHome4,
+    foyer: userHome2,
+    dining: indianLuxuryDining,
+    office: indianLuxuryOffice,
+    noor: noor,
+    servicesHeaderDecor: indianLuxuryTvUnit,
+    serviceTerrace: indianLuxuryBalcony,
+    serviceKids: indianLuxuryBedroom,
+    luxuryLiving: userHome1,
+    luxuryKitchen: indianLuxuryKitchen,
+    luxuryBedroom: userHome4
+};
+
 export const projects = [
-    //fhjhskfh
     {
-        slug: "the-travertine-villa",
-        name: "The Travertine Villa",
+        slug: "modern-living-room",
+        name: "Modern Living Room",
         location: "Greater Noida West",
-        type: "Turnkey Residential",
-        category: "Residential",
+        type: "Living Room",
+        category: "Living Rooms",
         year: "2025",
         area: "3,200 sq ft",
-        cover: hero,
-        gallery: [hero, dining, bedroom, materials, luxuryLiving, luxuryKitchen, luxuryBedroom, foyer, office, serviceTurnkey],
-        vision: "A young family relocating from Singapore wanted a home that read as warm and grounded, but unmistakably modern. The challenge: a 3,200 sq ft villa on a corner plot with strong directional light that needed careful tempering.",
-        approach: "We anchored the living spaces in travertine and dark walnut — materials that age with grace — then layered linen, brass, and hand-loomed textiles for warmth. Lighting was designed in three tiers so the home reads differently at every hour.",
+        cover: userHome1,
+        gallery: [userHome1],
+        vision: "A young family relocating from Singapore wanted a home that read as warm and grounded, but unmistakably modern.",
+        approach: "We anchored the living spaces in travertine and dark walnut — materials that age with grace — then layered linen, brass, and hand-loomed textiles for warmth.",
         client: {
-            quote: "Mr. Noor understood our vision before we could fully articulate it. The result is a home that feels entirely ours — delivered exactly to schedule.",
-            author: "Ananya & Vikram S. · Villa Interior",
+            quote: "Mr. Noor understood our vision before we could fully articulate it. The result is a home that feels entirely ours.",
+            author: "Ananya & Vikram S.",
         },
     },
     {
@@ -47,24 +56,13 @@ export const projects = [
         category: "Kitchens",
         year: "2025",
         area: "320 sq ft",
-        cover: kitchen,
-        gallery: [
-            kitchen,
-            luxuryKitchen,
-            "https://images.unsplash.com/photo-1556909211-36987daf7b4d?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1613546011790-78a0d2f09995?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80"
-        ],
-        vision: "An apartment kitchen for a family that entertains weekly. The client wanted the kitchen to act as both workshop and stage — quietly functional in daily use, theatrical when guests arrive.",
-        approach: "Fluted dark walnut joinery wraps three walls; the island is a single slab of Calacatta. Brushed brass hardware, warm under-cabinet light, and a discreetly hidden pantry resolve the tension between calm and capability.",
+        cover: indianLuxuryKitchen,
+        gallery: [indianLuxuryKitchen],
+        vision: "An apartment kitchen for a family that entertains weekly. The client wanted the kitchen to act as both workshop and stage.",
+        approach: "Fluted dark walnut joinery wraps three walls; the island is a single slab of Calacatta. Brushed brass hardware adds tension between calm and capability.",
         client: {
-            quote: "The most-discussed room by every guest. Every detail — lighting, hardware, storage — has been thought through with extraordinary care.",
-            author: "Priya K. · Modular Kitchen · Ghaziabad",
+            quote: "Every detail — lighting, hardware, storage — has been thought through with extraordinary care.",
+            author: "Priya K.",
         },
     },
     {
@@ -75,21 +73,13 @@ export const projects = [
         category: "Bedrooms",
         year: "2024",
         area: "480 sq ft",
-        cover: bedroom,
-        gallery: [
-            bedroom,
-            luxuryBedroom,
-            "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80"
-        ],
+        cover: indianLuxuryBedroom,
+        gallery: [indianLuxuryBedroom],
         vision: "A primary bedroom for a couple who travel extensively. They wanted the room to feel like a private suite — restorative, hushed, free of digital intrusion.",
-        approach: "An upholstered taupe boucle wall reduces ambient noise and softens the geometry. Walnut floors, layered linens, and a single sculptural reading lamp do the rest. There is no overhead light — only pools of warmth.",
+        approach: "An upholstered taupe boucle wall reduces ambient noise. Walnut floors, layered linens, and a single sculptural reading lamp do the rest.",
         client: {
-            quote: "We sleep better. That sounds simple. It is the single most valuable thing a designer has ever given us.",
-            author: "Mr. & Mrs. K. · Master Bedroom · Gurgaon",
+            quote: "We sleep better. It is the single most valuable thing a designer has ever given us.",
+            author: "Mr. & Mrs. K.",
         },
     },
     {
@@ -100,24 +90,13 @@ export const projects = [
         category: "Residential",
         year: "2024",
         area: "240 sq ft",
-        cover: foyer,
-        gallery: [
-            foyer,
-            serviceTerrace,
-            serviceCeiling,
-            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1534349762230-e0cadf78f5da?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=800&q=80"
-        ],
-        vision: "A foyer that needed to do three things: receive guests, resolve an awkward circular geometry, and signal — without ostentation — the quality of what lay beyond.",
-        approach: "A curved travertine wall absorbs the geometry. A single sculptural console, one artwork, and a slim brass ceiling reveal are the only gestures. Restraint is what makes the moment land.",
+        cover: userHome2,
+        gallery: [userHome2],
+        vision: "A foyer that needed to do three things: receive guests, resolve an awkward circular geometry, and signal the quality of what lay beyond.",
+        approach: "A curved travertine wall absorbs the geometry. A single sculptural console and one artwork are the only gestures. Restraint is what makes the moment land.",
         client: {
             quote: "Every visitor pauses here. That is exactly what we asked for.",
-            author: "The R. Family · Delhi",
+            author: "The R. Family",
         },
     },
     {
@@ -128,255 +107,131 @@ export const projects = [
         category: "Living Rooms",
         year: "2025",
         area: "360 sq ft",
-        cover: dining,
-        gallery: [
-            dining,
-            hero,
-            luxuryLiving,
-            serviceLivingRoom,
-            "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1615876234886-fd9a39fda97f?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80"
-        ],
+        cover: indianLuxuryDining,
+        gallery: [indianLuxuryDining],
         vision: "A formal dining room that needed to seat ten without feeling cavernous when it was just the family of four eating breakfast.",
-        approach: "A solid oak table, a sculptural cluster chandelier, and a fluted screen that closes the room down to intimate scale on quiet nights. The art wall does the rest of the conversation.",
+        approach: "A solid oak table, a sculptural cluster chandelier, and a fluted screen that closes the room down to intimate scale on quiet nights.",
         client: {
             quote: "Dinner parties have become an event again. The room makes the evening.",
-            author: "Mrs. M. · Greater Noida",
+            author: "Mrs. M.",
         },
     },
     {
-        slug: "the-private-library",
-        name: "The Private Library",
+        slug: "luxury-bedroom-suite",
+        name: "Luxury Bedroom Suite",
         location: "Noida",
-        type: "Home Office",
-        category: "Offices",
+        type: "Master Bedroom",
+        category: "Bedrooms",
         year: "2024",
         area: "280 sq ft",
-        cover: office,
-        gallery: [
-            office,
-            serviceFurniture,
-            "https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1606744824163-985d376605aa?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80"
-        ],
-        vision: "A working library for a senior partner who reads three hours every morning. The room needed to hold 1,200 books, a working desk, and a lounge chair that genuinely invites sitting.",
-        approach: "Built-in dark walnut shelving wraps two walls. A leather lounge chair anchors the corner. Lighting is layered: a brass desk lamp, a single floor lamp, and indirect cove warmth for the books.",
+        cover: userHome3,
+        gallery: [userHome3],
+        vision: "A working library for a senior partner who reads three hours every morning. The room needed to hold 1,200 books.",
+        approach: "Built-in dark walnut shelving wraps two walls. Lighting is layered: a brass desk lamp and indirect cove warmth for the books.",
         client: {
             quote: "I have started arriving early at home, just to spend time here.",
-            author: "Mr. A. · Noida",
+            author: "Mr. A.",
         },
     },
+    {
+        slug: "the-executive-suite",
+        name: "The Executive Suite",
+        location: "Gurgaon",
+        type: "Corporate Office",
+        category: "Offices",
+        year: "2025",
+        area: "900 sq ft",
+        cover: indianLuxuryOffice,
+        gallery: [indianLuxuryOffice],
+        vision: "A refined workspace for a managing director who wanted an office that felt more like a private study than a corporate room.",
+        approach: "Warm woods, ambient lighting, and bespoke Indian craftsmanship were combined to create an atmosphere of quiet luxury and focus.",
+        client: {
+            quote: "This space has transformed how I work. It is elegant and incredibly grounded.",
+            author: "Mr. S. K.",
+        },
+    },
+    {
+        slug: "creative-design-studio",
+        name: "Creative Design Studio",
+        location: "Delhi",
+        type: "Boutique Office",
+        category: "Offices",
+        year: "2024",
+        area: "1,100 sq ft",
+        cover: projectOffice,
+        gallery: [projectOffice],
+        vision: "An inspiring space for a boutique agency, requiring a blend of collaborative areas and quiet zones for deep work.",
+        approach: "We embraced natural light and earthy tones, using subtle spatial dividers to maintain an open yet structured environment.",
+        client: {
+            quote: "The aesthetic perfectly captures our brand's ethos. The team loves it.",
+            author: "Creative Director",
+        },
+    }
 ];
+
 export const services = [
     {
-        slug: "residential-interior-design",
-        name: "Residential Interior Design",
-        shortName: "Residential Design",
-        tagline: "Whole-home interiors, designed and delivered end-to-end.",
-        intro: "A complete residential design service for owners commissioning a single, considered interior for their primary home — from spatial planning and concept development to material specification and final handover. Every decision passes through Mr. Noor's review; every milestone is supervised by Mr. Nadeem.",
-        scope: [
-            "Detailed brief and lifestyle assessment",
-            "Spatial planning and layout strategy",
-            "Concept boards, palette and 3D visualisations",
-            "Bespoke joinery, furniture and lighting design",
-            "Material and finish specification",
-            "On-site execution and quality supervision",
-            "Final styling, handover and care guide",
-        ],
-        philosophy: "A home is not a project. A home is a daily environment for the life you have built. We design slowly, decide thoughtfully, and finish completely.",
-        cover: hero,
+        slug: "turnkey-interior-solutions",
+        name: "Turnkey Interior Solutions",
+        shortName: "Turnkey Solutions",
+        tagline: "From empty shell to move-in ready. One studio. One accountability.",
+        intro: "A complete turnkey delivery for clients who want one team accountable for design, procurement, fabrication, execution, and final styling.",
+        scope: ["Full scope brief", "Design development", "Civil & electrical coordination", "Project management"],
+        philosophy: "Turnkey means one number to call, one team to trust.",
+        cover: indianLuxuryLiving,
     },
     {
         slug: "modular-kitchen-design",
         name: "Modular Kitchen Design",
         shortName: "Modular Kitchens",
         tagline: "Kitchens designed for how you actually cook, entertain, and live.",
-        intro: "From layout planning to precision hardware, our kitchens are built around real cooking patterns — not catalogue presets. We design the workflow first, then design the room around it.",
-        scope: [
-            "Kitchen layout planning (U, L, parallel, island, galley)",
-            "Custom modular unit design with CAD drawings",
-            "Premium shutter material selection",
-            "Countertop and splashback specification",
-            "Hardware and appliance integration",
-            "Lighting and ventilation design",
-            "On-site fabrication and quality verification",
-        ],
-        philosophy: "A kitchen earns its keep at 7am, not just at a dinner party. Beauty must survive daily use.",
-        cover: kitchen,
-    },
-    {
-        slug: "luxury-living-room-interiors",
-        name: "Luxury Living Room Interiors",
-        shortName: "Living Rooms",
-        tagline: "Living rooms composed for conversation, for stillness, for guests.",
-        intro: "We design living rooms as the social heart of the home — composed for movement and pause, for the family alone and for twelve guests, for morning light and for evening warmth.",
-        scope: [
-            "Spatial layout and circulation",
-            "Custom seating and upholstery",
-            "Joinery, media and feature walls",
-            "Lighting design — ambient, task, accent",
-            "Rug, art, and accessory curation",
-            "Acoustic and material balance",
-        ],
-        philosophy: "A living room is the only room everyone in the family uses every day. It must feel inevitable.",
-        cover: serviceLivingRoom,
+        intro: "From layout planning to precision hardware, our kitchens are built around real cooking patterns.",
+        scope: ["Kitchen layout planning", "Custom modular unit design", "Hardware and appliance integration"],
+        philosophy: "Beauty must survive daily use.",
+        cover: indianLuxuryKitchen,
     },
     {
         slug: "luxury-bedroom-design",
         name: "Luxury Bedroom Design",
         shortName: "Bedrooms",
         tagline: "Bedrooms as private suites — restorative, hushed, intimate.",
-        intro: "We treat the bedroom as a sanctuary. Materials, lighting, and acoustics are designed for sleep first. Aesthetics follow from there.",
-        scope: [
-            "Layout and wardrobe planning",
-            "Upholstered walls and headboards",
-            "Bespoke joinery and dressing areas",
-            "Layered, dimmable lighting design",
-            "Linen, drape and textile curation",
-            "Ensuite coordination",
-        ],
+        intro: "We treat the bedroom as a sanctuary. Materials, lighting, and acoustics are designed for sleep first.",
+        scope: ["Layout planning", "Upholstered walls", "Layered lighting design"],
         philosophy: "If the room does not improve your sleep, the design has failed.",
-        cover: bedroom,
+        cover: indianLuxuryBedroom,
     },
     {
-        slug: "kids-room-design",
-        name: "Kids Room Design",
-        shortName: "Kids Rooms",
-        tagline: "Bedrooms that grow with them, balancing play, study, and rest.",
-        intro: "Designing for children requires balancing imagination with practical longevity. We create rooms that feel magical now but adapt easily as they grow.",
-        scope: [
-            "Age-appropriate space planning",
-            "Custom bunk beds and study units",
-            "Safe and durable material selection",
-            "Integrated storage solutions",
-            "Playful yet timeless colour palettes",
-        ],
-        philosophy: "A child's room should inspire imagination while maintaining order.",
-        cover: serviceKids,
-    },
-    {
-        slug: "false-ceiling-lighting-design",
-        name: "False Ceiling & Lighting Design",
-        shortName: "Ceilings & Lighting",
-        tagline: "Lighting as architecture. Ceilings as composition.",
-        intro: "Lighting is the most under-considered element in Indian interiors. We design lighting as the first decision, not the last — with ceilings composed to support it.",
-        scope: [
-            "Architectural ceiling design",
-            "Three-tier lighting strategy (ambient, task, accent)",
-            "Cove, recessed and decorative integration",
-            "Dimming and scene control",
-            "Daylight and circadian planning",
-        ],
-        philosophy: "A room is what its light makes it.",
-        cover: serviceCeiling,
-    },
-    {
-        slug: "custom-furniture-design",
-        name: "Custom Furniture Design",
-        shortName: "Custom Furniture",
-        tagline: "Furniture made for your space, by craftspeople we have worked with for years.",
-        intro: "When the catalogue does not answer the question, we design the answer. Each piece is detailed, fabricated, and finished under our supervision.",
-        scope: [
-            "Concept and detail drawings",
-            "Material and finish selection",
-            "Prototype and sample review",
-            "Workshop fabrication oversight",
-            "On-site installation and finishing",
-        ],
-        philosophy: "Bespoke is the original sustainability. Build it once, build it right.",
-        cover: serviceFurniture,
-    },
-    {
-        slug: "turnkey-interior-solutions",
-        name: "Turnkey Interior Solutions",
-        shortName: "Turnkey Solutions",
-        tagline: "From empty shell to move-in ready. One studio. One accountability.",
-        intro: "A complete turnkey delivery for clients who want one team accountable for design, procurement, fabrication, execution, and final styling. We hand you the keys.",
-        scope: [
-            "Full scope brief and feasibility",
-            "Design development and approvals",
-            "Civil, electrical and plumbing coordination",
-            "Procurement and vendor management",
-            "On-site project management",
-            "Final styling and move-in handover",
-            "Documented warranty and care guide",
-        ],
-        philosophy: "Turnkey means one number to call, one team to trust, one date to count down to.",
-        cover: serviceTurnkey,
+        slug: "tv-unit-feature-wall",
+        name: "TV Unit & Feature Walls",
+        shortName: "Feature Walls",
+        tagline: "Feature walls that anchor the room without dominating it.",
+        intro: "We design feature walls as composition, not as decoration — with material, light, and proportion.",
+        scope: ["Concept studies", "Material specification", "Custom joinery"],
+        philosophy: "A feature wall should reward you on the hundredth day.",
+        cover: userHome3,
     },
     {
         slug: "office-commercial-interiors",
-        name: "Office & Commercial Interiors",
+        name: "Office & Commercial",
         shortName: "Office Interiors",
         tagline: "Workplaces designed for focus, presence, and the brand they represent.",
-        intro: "Senior offices, boutique studios, and client-facing commercial spaces — designed with the same restraint as our residential work, with attention to acoustics, lighting, and material durability.",
-        scope: [
-            "Workplace strategy and zoning",
-            "Reception and client area design",
-            "Bespoke workstation and meeting joinery",
-            "Acoustic and lighting design",
-            "Brand-led material palette",
-        ],
+        intro: "Senior offices and boutique studios — designed with the same restraint as our residential work.",
+        scope: ["Workplace strategy", "Reception design", "Acoustic and lighting design"],
         philosophy: "Your office is your most under-used brand asset.",
-        cover: office,
+        cover: userHome5,
     },
     {
-        slug: "space-planning-storage",
-        name: "Space Planning & Storage",
-        shortName: "Space & Storage",
-        tagline: "Planning that solves the rooms you actually live in.",
-        intro: "Often the room does not need a redesign — it needs a re-plan. Our space planning service rethinks layouts and storage to recover function without rebuilding.",
-        scope: [
-            "Lifestyle and storage audit",
-            "Revised layouts and circulation",
-            "Concealed storage solutions",
-            "Modular wardrobe and utility design",
-            "Implementation drawings",
-        ],
-        philosophy: "Storage is the most luxurious thing in a home. It is what creates the calm.",
-        cover: serviceStorage,
-    },
-    {
-        slug: "tv-unit-feature-wall-design",
-        name: "TV Unit & Feature Wall Design",
-        shortName: "Feature Walls",
-        tagline: "Feature walls that anchor the room without dominating it.",
-        intro: "We design feature walls as composition, not as decoration — with material, light, and proportion working together to give the room a centre.",
-        scope: [
-            "Concept and proportion studies",
-            "Material and finish specification",
-            "Integrated lighting and cable management",
-            "Custom joinery and installation",
-            "Art and object styling",
-        ],
-        philosophy: "A feature wall should reward you on the hundredth day, not just the first.",
-        cover: dining,
-    },
-    {
-        slug: "terrace-design",
+        slug: "terrace-balcony-design",
         name: "Terrace & Balcony Design",
         shortName: "Terrace Design",
         tagline: "Outdoor spaces designed for entertaining, relaxing, and taking in the view.",
-        intro: "We transform terraces and balconies into functional extensions of your living space. From weather-resistant materials to ambient outdoor lighting, we design for the elements.",
-        scope: [
-            "Outdoor layout and zoning",
-            "Weather-resistant material selection",
-            "Custom planters and green walls",
-            "Outdoor lighting and power planning",
-            "Bespoke outdoor seating",
-        ],
+        intro: "We transform terraces and balconies into functional extensions of your living space.",
+        scope: ["Outdoor layout", "Weather-resistant materials", "Outdoor lighting"],
         philosophy: "An outdoor space should be as considered as an indoor one.",
-        cover: serviceTerrace,
-    },
+        cover: indianLuxuryBalcony,
+    }
 ];
+
 export const STUDIO = {
     name: "Souvenir Interiors",
     phone: "+91 81782 32328",
@@ -391,25 +246,9 @@ export const videos = [
     {
         id: "video-1",
         title: "The Travertine Villa — Walkthrough",
-        description: "A complete cinematic walkthrough of the 3,200 sq ft modern villa featuring natural travertine details, dark walnut paneling, and layered lighting design.",
+        description: "A complete cinematic walkthrough of the 3,200 sq ft modern villa featuring natural travertine details.",
         url: "https://assets.mixkit.co/videos/preview/mixkit-interior-of-a-modern-living-room-with-plants-41956-large.mp4",
         duration: "0:45",
         category: "Residential"
-    },
-    {
-        id: "video-2",
-        title: "Fluted Walnut Kitchen — Details & Hardware",
-        description: "Explore the custom modular kitchen layout, showing the Calacatta island, integrated brass fixtures, and fluted joinery in motion.",
-        url: "https://assets.mixkit.co/videos/preview/mixkit-kitchen-in-a-modern-home-41958-large.mp4",
-        duration: "0:30",
-        category: "Kitchens"
-    },
-    {
-        id: "video-3",
-        title: "The Soft Room — Sanctuary Experience",
-        description: "Experience the calming ambient mood of the master bedroom, showcasing the upholstered bouclé wall and warm, indirect lighting design.",
-        url: "https://assets.mixkit.co/videos/preview/mixkit-bedroom-interior-of-a-contemporary-house-41960-large.mp4",
-        duration: "0:40",
-        category: "Bedrooms"
     }
 ];

@@ -180,6 +180,7 @@ export default function ConsultationForm() {
                   <SelectValue placeholder="Select scope" />
                 </SelectTrigger>
                 <SelectContent className="bg-popover text-popover-foreground border shadow-md rounded-md p-1">
+                  <SelectItem value="Flat or House">Flat or House</SelectItem>
                   <SelectItem value="Full home — turnkey">Full home — turnkey</SelectItem>
                   <SelectItem value="Single room — kitchen">Single room — kitchen</SelectItem>
                   <SelectItem value="Single room — living">Single room — living</SelectItem>

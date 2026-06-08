@@ -208,7 +208,7 @@ export const services = [
         intro: "We design feature walls as composition, not as decoration — with material, light, and proportion.",
         scope: ["Concept studies", "Material specification", "Custom joinery"],
         philosophy: "A feature wall should reward you on the hundredth day.",
-        cover: userHome3,
+        cover: indianLuxuryTvUnit,
     },
     {
         slug: "office-commercial-interiors",
@@ -218,7 +218,7 @@ export const services = [
         intro: "Senior offices and boutique studios — designed with the same restraint as our residential work.",
         scope: ["Workplace strategy", "Reception design", "Acoustic and lighting design"],
         philosophy: "Your office is your most under-used brand asset.",
-        cover: userHome5,
+        cover: indianLuxuryOffice,
     },
     {
         slug: "terrace-balcony-design",

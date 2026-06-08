@@ -148,11 +148,13 @@ export default function ContactForm() {
                   <SelectValue placeholder="Select" />
                 </SelectTrigger>
                 <SelectContent className="bg-popover text-popover-foreground border shadow-md rounded-md p-1">
-                  <SelectItem value="New Home">New Home</SelectItem>
-                  <SelectItem value="Renovation">Renovation</SelectItem>
-                  <SelectItem value="Modular Kitchen">Modular Kitchen</SelectItem>
-                  <SelectItem value="Office">Office</SelectItem>
-                  <SelectItem value="Other">Other</SelectItem>
+                  <SelectItem value="Flat or House">Flat or House</SelectItem>
+                  <SelectItem value="Full home — turnkey">Full home — turnkey</SelectItem>
+                  <SelectItem value="Single room — kitchen">Single room — kitchen</SelectItem>
+                  <SelectItem value="Single room — living">Single room — living</SelectItem>
+                  <SelectItem value="Single room — bedroom">Single room — bedroom</SelectItem>
+                  <SelectItem value="Office / commercial">Office / commercial</SelectItem>
+                  <SelectItem value="Still exploring">Still exploring</SelectItem>
                 </SelectContent>
               </Select>
             </div>

@@ -31,7 +31,7 @@ export default function Home() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(26,26,26,0.45) 0%, rgba(26,26,26,0.15) 35%, rgba(26,26,26,0.75) 100%)" }} />
         <div className="container-x relative z-10 h-full flex flex-col justify-end pb-24 md:pb-32" style={{ color: "#faf8f5" }}>
           <div className="animate-fade-up max-w-[1100px]">
-            <div className="eyebrow eyebrow-light mb-6 animate-fade-in">
+            <div className="eyebrow eyebrow-light mb-6 animate-fade-in text-[16px]">
               <span className="rule" /> Luxury Interiors · Delhi NCR
             </div>
             <h1 className="display-xl" style={{ color: "inherit" }}>

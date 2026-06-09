@@ -154,6 +154,7 @@ export default function ContactForm() {
                   <SelectItem value="Single room — living">Single room — living</SelectItem>
                   <SelectItem value="Single room — bedroom">Single room — bedroom</SelectItem>
                   <SelectItem value="Office / commercial">Office / commercial</SelectItem>
+                  <SelectItem value="Possession Planned">Possession Planned</SelectItem>
                   <SelectItem value="Still exploring">Still exploring</SelectItem>
                 </SelectContent>
               </Select>

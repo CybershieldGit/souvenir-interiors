@@ -117,7 +117,7 @@ export default function PortfolioContent() {
   return (
     <>
       {/* Filter bar */}
-      <section className="sticky top-[76px] md:top-[88px] z-30 border-y" style={{ backgroundColor: "rgba(250,248,245,0.94)", backdropFilter: "blur(10px)", borderColor: "#e5e5e0" }}>
+      <section className="sticky top-[100px] z-30 border-y" style={{ backgroundColor: "rgba(250,248,245,0.94)", backdropFilter: "blur(10px)", borderColor: "#e5e5e0" }}>
         <div className="container-x py-5 flex gap-8 overflow-x-auto">
           {filters.map((f) => (
             <button

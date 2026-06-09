@@ -44,7 +44,11 @@ export default function ConsultationForm() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (name === "whatsapp") {
-      const numericValue = value.replace(/\D/g, "").slice(0, 10);
+      let numericValue = value.replace(/\D/g, "");
+      if (numericValue.startsWith("0")) {
+        numericValue = numericValue.substring(1);
+      }
+      numericValue = numericValue.slice(0, 10);
       setFormData((prev) => ({ ...prev, [name]: numericValue }));
     } else {
       setFormData((prev) => ({ ...prev, [name]: value }));
@@ -155,8 +159,8 @@ export default function ConsultationForm() {
                   disabled={loading}
                   className="field"
                   style={{ paddingLeft: "34px" }}
-                  pattern="[0-9]{10}"
-                  title="Please enter exactly 10 digits"
+                  pattern="[1-9][0-9]{9}"
+                  title="Please enter exactly 10 digits (cannot start with 0)"
                   maxLength={10}
                 />
               </div>
@@ -172,6 +176,8 @@ export default function ConsultationForm() {
               onChange={handleChange}
               disabled={loading}
               className="field"
+              pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+              title="Please enter a valid email address (e.g. user@example.com)"
             />
           </div>
           <div>

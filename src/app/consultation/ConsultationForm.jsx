@@ -43,7 +43,12 @@ export default function ConsultationForm() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (name === "whatsapp") {
+      const numericValue = value.replace(/\D/g, "").slice(0, 10);
+      setFormData((prev) => ({ ...prev, [name]: numericValue }));
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleFormatChange = (formatVal) => {
@@ -75,7 +80,7 @@ export default function ConsultationForm() {
           from_name: "Souvenir Consultation",
           name: formData.name,
           email: formData.email,
-          whatsapp: formData.whatsapp,
+          whatsapp: `+91 ${formData.whatsapp}`,
           location: formData.location || "Not specified",
           scope: formData.scope || "Not specified",
           format: formData.format,
@@ -133,16 +138,28 @@ export default function ConsultationForm() {
             </div>
             <div>
               <label className="field-label">WhatsApp</label>
-              <input
-                required
-                type="tel"
-                name="whatsapp"
-                placeholder="+91"
-                value={formData.whatsapp}
-                onChange={handleChange}
-                disabled={loading}
-                className="field"
-              />
+              <div className="relative">
+                <span 
+                  className="absolute left-0 top-[14px] text-[16px] font-sans select-none pointer-events-none" 
+                  style={{ color: "var(--charcoal)" }}
+                >
+                  +91
+                </span>
+                <input
+                  required
+                  type="tel"
+                  name="whatsapp"
+                  placeholder="10-digit number"
+                  value={formData.whatsapp}
+                  onChange={handleChange}
+                  disabled={loading}
+                  className="field"
+                  style={{ paddingLeft: "34px" }}
+                  pattern="[0-9]{10}"
+                  title="Please enter exactly 10 digits"
+                  maxLength={10}
+                />
+              </div>
             </div>
           </div>
           <div>

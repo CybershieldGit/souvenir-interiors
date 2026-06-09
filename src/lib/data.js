@@ -13,9 +13,10 @@ import userHome3 from "@/assets/user_home_3.jpg";
 import userHome4 from "@/assets/user_home_4.jpg";
 import userHome5 from "@/assets/user_home_5.jpg";
 import projectOffice from "@/assets/project-office.jpg";
+import heroSunset from "@/assets/hero-sunset.png";
 
 export const images = {
-    hero: userHome1,
+    hero: heroSunset,
     kitchen: indianLuxuryKitchen,
     bedroom: userHome4,
     foyer: userHome2,

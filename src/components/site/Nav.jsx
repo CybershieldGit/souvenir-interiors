@@ -33,19 +33,13 @@ export function Nav() {
                 ? "bg-transparent border-b border-transparent"
                 : "bg-[rgba(250,248,245,0.96)] backdrop-blur-md border-b border-black/[0.08] shadow-[0_7px_28px_rgba(0,0,0,0.09)]",
         ].join(" ")}>
-        <div className="w-full max-w-[1440px] mx-auto px-5 md:px-10 lg:px-12 xl:px-16 flex items-center justify-between h-[76px] md:h-[88px]">
-          <Link href="/" className="flex items-center gap-2.5 group">
+        <div className="w-full max-w-[1440px] mx-auto px-5 md:px-10 lg:px-12 xl:px-16 flex items-center justify-between h-[100px]">
+          <Link href="/" className="flex items-center group">
             <img
-              src="/icon.png"
+              src={transparent ? "/Group 1000002304 (1).svg" : "/Group 1000002301.svg"}
               alt="Souvenir Interiors Logo"
-              className="w-9 h-9 md:w-11 md:h-11 object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-[36px] md:h-[44px] w-auto object-contain transition-all duration-300 group-hover:scale-105"
             />
-            <span
-              className="font-script text-[28px] md:text-[34px] lowercase tracking-normal leading-none transition-colors duration-300"
-              style={{ color: transparent ? "#ffffff" : "#1a1a1a" }}
-            >
-              souvenir interiors
-            </span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-10">
@@ -120,12 +114,13 @@ export function Nav() {
             "fixed inset-0 z-[60] bg-charcoal text-warm-white transition-all duration-500 flex flex-col overflow-y-auto pb-10",
             open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none",
         ].join(" ")} style={{ backgroundColor: "#1a1a1a", color: "#faf8f5" }}>
-        <div className="container-x flex items-center justify-between h-[76px] flex-shrink-0">
-          <div className="flex items-center gap-2">
-            <img src="/icon.png" alt="" className="w-8 h-8 object-contain" />
-            <span className="font-script text-[26px] lowercase leading-none" style={{ color: "#faf8f5" }}>
-              souvenir interiors
-            </span>
+        <div className="container-x flex items-center justify-between h-[100px] flex-shrink-0">
+          <div className="flex items-center">
+            <img
+              src="/Group 1000002304 (1).svg"
+              alt="Souvenir Interiors Logo"
+              className="h-[36px] w-auto object-contain"
+            />
           </div>
           <button onClick={() => setOpen(false)} aria-label="Close menu" className="p-2 -mr-2">
             <X size={26} strokeWidth={1.25}/>

@@ -37,7 +37,19 @@ export function PromoPopup() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (name === "mobile") {
+      let numericValue = value.replace(/\D/g, "");
+      if (numericValue.startsWith("0")) {
+        numericValue = numericValue.substring(1);
+      }
+      numericValue = numericValue.slice(0, 10);
+      setFormData((prev) => ({ ...prev, [name]: numericValue }));
+    } else if (name === "pincode") {
+      const numericValue = value.replace(/\D/g, "").slice(0, 6);
+      setFormData((prev) => ({ ...prev, [name]: numericValue }));
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -64,7 +76,7 @@ export function PromoPopup() {
           subject: `New Promo Offer Request: ${formData.name}`,
           from_name: "Souvenir Promo Offer",
           name: formData.name,
-          mobile: formData.mobile,
+          mobile: `+91 ${formData.mobile}`,
           pincode: formData.pincode,
         })
       });
@@ -158,9 +170,12 @@ export function PromoPopup() {
                   name="mobile"
                   value={formData.mobile}
                   onChange={handleChange}
-                  placeholder="Enter Mobile No."
+                  placeholder="Enter 10-digit number"
                   disabled={loading}
                   className="w-full px-3 py-2.5 text-sm outline-none border-none focus:ring-0"
+                  pattern="[1-9][0-9]{9}"
+                  title="Please enter exactly 10 digits (cannot start with 0)"
+                  maxLength={10}
                 />
               </div>
 
@@ -170,9 +185,12 @@ export function PromoPopup() {
                 name="pincode"
                 value={formData.pincode}
                 onChange={handleChange}
-                placeholder="Enter Pincode"
+                placeholder="Enter 6-digit Pincode"
                 disabled={loading}
                 className="w-full border border-gray-300 rounded px-3 py-2.5 text-sm focus:outline-none focus:border-neutral-500 focus:ring-0 transition-colors"
+                pattern="[0-9]{6}"
+                title="Please enter exactly 6 digits"
+                maxLength={6}
               />
 
               <p className="text-[10px] text-gray-500 leading-tight text-center mt-1">

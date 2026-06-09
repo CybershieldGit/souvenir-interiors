@@ -39,6 +39,7 @@ export default function PortfolioContent() {
     fetchVideoInfo("video3", "https://www.youtube.com/watch?v=tYzXidefvKQ");
     fetchVideoInfo("video4", "https://www.youtube.com/watch?v=qSC77KuVOZY");
     fetchVideoInfo("video5", "https://www.youtube.com/watch?v=1_Eq0X8U2wc");
+    fetchVideoInfo("video6", "https://www.youtube.com/watch?v=1_Eq0X8U2wc");
   }, []);
 
   const filtered = active === "All" ? projects : projects.filter((p) => p.category === active);
@@ -241,6 +242,22 @@ export default function PortfolioContent() {
                   <div className="pt-5 text-left">
                     <h3 className="font-display text-2xl text-neutral-900">
                       {videoData.video5?.title || "Interior Highlight"}
+                    </h3>
+                    <div className="mt-1 text-xs uppercase tracking-[0.14em]" style={{ color: "#6b6b6b" }}>
+                      Project Showcase
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+
+              <Reveal delay={400}>
+                <div className="group block">
+                  <div className="aspect-video w-full overflow-hidden bg-surface border" style={{ backgroundColor: "#000", borderColor: "#e5e5e0" }}>
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/1_Eq0X8U2wc?si=6SVosxzZDcDKwgi3" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                  </div>
+                  <div className="pt-5 text-left">
+                    <h3 className="font-display text-2xl text-neutral-900">
+                      {videoData.video6?.title || "Featured Details"}
                     </h3>
                     <div className="mt-1 text-xs uppercase tracking-[0.14em]" style={{ color: "#6b6b6b" }}>
                       Project Showcase

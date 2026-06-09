@@ -24,7 +24,12 @@ export default function ContactForm() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (name === "whatsapp") {
+      const numericValue = value.replace(/\D/g, "").slice(0, 10);
+      setFormData((prev) => ({ ...prev, [name]: numericValue }));
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleFormatChange = (formatVal) => {
@@ -56,7 +61,7 @@ export default function ContactForm() {
           from_name: "Souvenir Contact Form",
           name: formData.name,
           email: formData.email,
-          whatsapp: formData.whatsapp,
+          whatsapp: `+91 ${formData.whatsapp}`,
           projectType: formData.projectType || "Not specified",
           format: formData.format,
           notes: formData.notes || "None"
@@ -126,16 +131,28 @@ export default function ContactForm() {
             </div>
             <div>
               <label className="field-label">WhatsApp Number</label>
-              <input
-                required
-                type="tel"
-                name="whatsapp"
-                value={formData.whatsapp}
-                onChange={handleChange}
-                disabled={loading}
-                className="field"
-                placeholder="+91"
-              />
+              <div className="relative">
+                <span 
+                  className="absolute left-0 top-[14px] text-[16px] font-sans select-none pointer-events-none" 
+                  style={{ color: "var(--charcoal)" }}
+                >
+                  +91
+                </span>
+                <input
+                  required
+                  type="tel"
+                  name="whatsapp"
+                  value={formData.whatsapp}
+                  onChange={handleChange}
+                  disabled={loading}
+                  className="field"
+                  style={{ paddingLeft: "34px" }}
+                  placeholder="10-digit number"
+                  pattern="[0-9]{10}"
+                  title="Please enter exactly 10 digits"
+                  maxLength={10}
+                />
+              </div>
             </div>
             <div>
               <label className="field-label">Project Type</label>

@@ -28,7 +28,7 @@ export default function Home() {
           alt="Luxury living room interior by Souvenir Interiors, Delhi NCR"
           className="absolute inset-0 w-full h-full object-cover animate-slow-zoom"
         />
-        <div className="absolute inset-0 hero-overlay" />
+        <div className="absolute inset-0" style={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }} />
         <div className="container-x relative z-10 h-full flex flex-col justify-end pb-16 md:pb-24" style={{ color: "#ffffff" }}>
           <div className="animate-fade-up max-w-[850px]">
             <div className="eyebrow eyebrow-light mb-6 animate-fade-in text-[15px] tracking-[0.2em] font-semibold" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.3)" }}>

@@ -29,25 +29,28 @@ export default function Home() {
           className="absolute inset-0 w-full h-full object-cover animate-slow-zoom"
         />
         <div className="absolute inset-0" style={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }} />
-        <div className="container-x relative z-10 h-full flex flex-col justify-end pb-16 md:pb-24" style={{ color: "#ffffff" }}>
+        <div className="container-x relative z-10 h-full flex flex-col justify-end pb-24 sm:pb-20 md:pb-24" style={{ color: "#ffffff" }}>
           <div className="animate-fade-up max-w-[850px]">
-            <div className="eyebrow eyebrow-light mb-6 animate-fade-in text-[15px] tracking-[0.2em] font-semibold" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.3)" }}>
-              <span className="rule" style={{ backgroundColor: "#e8d5a3" }} /> Luxury Interiors · Delhi NCR
+            <div className="eyebrow mb-4 sm:mb-6 animate-fade-in flex items-center text-[11px] sm:text-[13px] font-bold" style={{ textShadow: "none" }}>
+              <span className="rule" style={{ backgroundColor: "#ffffff", marginRight: "12px", height: "1px" }} />
+              <span className="px-4 py-1.5 tracking-[0.15em] uppercase" style={{ backgroundColor: "#ffffff", color: "#1a1a1a", borderRadius: "2px" }}>
+                Luxury Interiors · Delhi NCR
+              </span>
             </div>
-            <h1 className="display-xl" style={{ color: "inherit", textShadow: "0 4px 20px rgba(0,0,0,0.45)", lineHeight: "1.1", fontSize: "clamp(60px, 8.5vw, 102px)" }}>
+            <h1 className="display-xl font-light" style={{ color: "inherit", textShadow: "0 4px 20px rgba(0,0,0,0.45)", lineHeight: "1.15", fontSize: "clamp(38px, 8.5vw, 96px)" }}>
               <span style={{ color: "#ffffff" }}>Where Artistry</span>
               <br />
               <em className="italic font-light" style={{ color: "#e8d5a3" }}>Meets Precision.</em>
             </h1>
-            <p className="lead mt-10 max-w-xl animate-fade-up delay-200 font-medium" style={{ color: "#ffffff", textShadow: "0 2px 12px rgba(0,0,0,0.4)", fontSize: "clamp(18px, 1.4vw, 21px)" }}>
+            <p className="lead mt-6 sm:mt-8 md:mt-10 max-w-xl animate-fade-up delay-200 font-medium" style={{ color: "#ffffff", textShadow: "0 2px 12px rgba(0,0,0,0.4)", fontSize: "clamp(15px, 1.3vw, 19px)" }}>
               Bespoke luxury interiors for discerning homes across Delhi NCR. Designed with mastery.
               Delivered without compromise.
             </p>
-            <div className="mt-12 flex flex-wrap gap-5 animate-fade-up delay-300">
-              <Link href="/consultation" className="btn btn-primary" style={{ padding: "20px 36px", fontSize: "14px", fontWeight: "700", boxShadow: "0 10px 25px rgba(201, 168, 106, 0.4)" }}>
+            <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-up delay-300 w-full sm:w-auto">
+              <Link href="/consultation" className="btn btn-primary w-full sm:w-auto py-3.5 px-6 md:py-5 md:px-9 text-center text-xs sm:text-sm" style={{ fontWeight: "700", boxShadow: "0 10px 25px rgba(201, 168, 106, 0.4)" }}>
                 Schedule A Consultation
               </Link>
-              <Link href="/portfolio" className="btn btn-ghost-light" style={{ padding: "20px 36px", fontSize: "14px", fontWeight: "700", borderWidth: "2px", borderColor: "#ffffff" }}>
+              <Link href="/portfolio" className="btn btn-ghost-light w-full sm:w-auto py-3.5 px-6 md:py-5 md:px-9 text-center text-xs sm:text-sm" style={{ fontWeight: "700", borderWidth: "2px", borderColor: "#ffffff" }}>
                 Explore Our Portfolio
               </Link>
             </div>

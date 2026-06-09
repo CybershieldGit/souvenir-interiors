@@ -30,8 +30,8 @@ export function Nav() {
       <header className={[
             "fixed top-0 inset-x-0 z-50 transition-all duration-500",
             transparent
-                ? "bg-transparent"
-                : "bg-[rgba(250,248,245,0.92)] backdrop-blur-md shadow-[0_1px_20px_rgba(0,0,0,0.04)]",
+                ? "bg-transparent border-b border-transparent"
+                : "bg-[rgba(250,248,245,0.96)] backdrop-blur-md border-b border-black/[0.08] shadow-[0_7px_28px_rgba(0,0,0,0.09)]",
         ].join(" ")}>
         <div className="container-x flex items-center justify-between h-[76px] md:h-[88px]">
           <Link href="/" className="font-display text-[18px] md:text-[20px] tracking-[0.18em] uppercase" style={{ color: transparent ? "#faf8f5" : "#1a1a1a" }}>

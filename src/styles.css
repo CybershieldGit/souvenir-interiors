@@ -39,6 +39,7 @@
 
   --font-display: "Noto Serif Display", "Georgia", serif;
   --font-sans: "DM Sans", "Helvetica Neue", system-ui, sans-serif;
+  --font-script: var(--font-script), cursive;
 
   --radius-sm: 2px;
   --radius-md: 4px;

@@ -1,4 +1,4 @@
-import { Noto_Serif_Display, DM_Sans } from "next/font/google";
+import { Noto_Serif_Display, DM_Sans, Alex_Brush } from "next/font/google";
 import "../styles.css";
 
 const notoSerifDisplay = Noto_Serif_Display({
@@ -13,6 +13,13 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-sans",
+  display: "swap",
+});
+
+const alexBrush = Alex_Brush({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-script",
   display: "swap",
 });
 
@@ -41,7 +48,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${notoSerifDisplay.variable} ${dmSans.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${notoSerifDisplay.variable} ${dmSans.variable} ${alexBrush.variable}`} suppressHydrationWarning>
       <body suppressHydrationWarning>
         {children}
       </body>

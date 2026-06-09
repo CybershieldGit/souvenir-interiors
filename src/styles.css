@@ -379,6 +379,16 @@
     color: var(--mid-grey);
     margin-bottom: 4px;
   }
+
+  /* Premium luxury hero gradient overlay */
+  .hero-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.70) 0%,
+      rgba(0, 0, 0, 0.50) 45%,
+      rgba(0, 0, 0, 0.20) 100%
+    );
+  }
 }
 
 @keyframes fadeUp {

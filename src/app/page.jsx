@@ -28,26 +28,26 @@ export default function Home() {
           alt="Luxury living room interior by Souvenir Interiors, Delhi NCR"
           className="absolute inset-0 w-full h-full object-cover animate-slow-zoom"
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(26,26,26,0.45) 0%, rgba(26,26,26,0.15) 35%, rgba(26,26,26,0.75) 100%)" }} />
-        <div className="container-x relative z-10 h-full flex flex-col justify-end pb-24 md:pb-32" style={{ color: "#faf8f5" }}>
-          <div className="animate-fade-up max-w-[1100px]">
-            <div className="eyebrow eyebrow-light mb-6 animate-fade-in text-[16px]">
-              <span className="rule" /> Luxury Interiors · Delhi NCR
+        <div className="absolute inset-0 hero-overlay" />
+        <div className="container-x relative z-10 h-full flex flex-col justify-end pb-16 md:pb-24" style={{ color: "#ffffff" }}>
+          <div className="animate-fade-up max-w-[850px]">
+            <div className="eyebrow eyebrow-light mb-6 animate-fade-in text-[15px] tracking-[0.2em] font-semibold" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.3)" }}>
+              <span className="rule" style={{ backgroundColor: "#e8d5a3" }} /> Luxury Interiors · Delhi NCR
             </div>
-            <h1 className="display-xl" style={{ color: "inherit" }}>
-              <span style={{ color: "#fcfbf8" }}>Where Artistry</span>
+            <h1 className="display-xl" style={{ color: "inherit", textShadow: "0 4px 20px rgba(0,0,0,0.45)", lineHeight: "1.1", fontSize: "clamp(60px, 8.5vw, 102px)" }}>
+              <span style={{ color: "#ffffff" }}>Where Artistry</span>
               <br />
               <em className="italic font-light" style={{ color: "#e8d5a3" }}>Meets Precision.</em>
             </h1>
-            <p className="lead mt-8 max-w-xl animate-fade-up delay-200" style={{ color: "rgba(250,248,245,0.85)" }}>
+            <p className="lead mt-10 max-w-xl animate-fade-up delay-200 font-medium" style={{ color: "#ffffff", textShadow: "0 2px 12px rgba(0,0,0,0.4)", fontSize: "clamp(18px, 1.4vw, 21px)" }}>
               Bespoke luxury interiors for discerning homes across Delhi NCR. Designed with mastery.
               Delivered without compromise.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4 animate-fade-up delay-300">
-              <Link href="/consultation" className="btn btn-primary">
+            <div className="mt-12 flex flex-wrap gap-5 animate-fade-up delay-300">
+              <Link href="/consultation" className="btn btn-primary" style={{ padding: "20px 36px", fontSize: "14px", fontWeight: "700", boxShadow: "0 10px 25px rgba(201, 168, 106, 0.4)" }}>
                 Schedule A Consultation
               </Link>
-              <Link href="/portfolio" className="btn btn-ghost-light">
+              <Link href="/portfolio" className="btn btn-ghost-light" style={{ padding: "20px 36px", fontSize: "14px", fontWeight: "700", borderWidth: "2px", borderColor: "#ffffff" }}>
                 Explore Our Portfolio
               </Link>
             </div>

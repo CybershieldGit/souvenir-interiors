@@ -40,11 +40,19 @@ export function Nav() {
             <span className="ml-1">Interiors</span>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-8">
             {links.map((l) => {
               const active = pathname === l.href;
               return (
-                <Link key={l.href} href={l.href} className={`text-[13px] font-medium tracking-[0.12em] uppercase transition-colors ${active ? "text-gold" : ""}`} style={{ color: transparent && !active ? "#faf8f5" : active ? "#c9a86a" : "#1a1a1a" }}>
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className={`text-[13px] font-semibold tracking-[0.14em] uppercase transition-all duration-300 ${active ? "text-gold" : ""}`}
+                  style={{
+                    color: transparent && !active ? "#ffffff" : active ? "#c9a86a" : "#1a1a1a",
+                    textShadow: transparent ? "0 2px 8px rgba(0,0,0,0.5)" : "none"
+                  }}
+                >
                   {l.label}
                 </Link>
               );
@@ -53,8 +61,18 @@ export function Nav() {
               href={`https://wa.me/${STUDIO.whatsapp.replace("+","")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-gold-outline flex items-center justify-center gap-2"
-              style={{ height: "46px", padding: "0 24px", fontSize: 12 }}
+              className="btn flex items-center justify-center gap-2 transition-all duration-300"
+              style={{
+                height: "46px",
+                padding: "0 24px",
+                fontSize: 12,
+                fontWeight: "600",
+                backgroundColor: "transparent",
+                color: transparent ? "#ffffff" : "#1a1a1a",
+                borderColor: transparent ? "rgba(255, 255, 255, 0.5)" : "rgba(26, 26, 26, 0.3)",
+                borderWidth: "1.5px",
+                textShadow: transparent ? "0 1px 4px rgba(0,0,0,0.3)" : "none"
+              }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +86,17 @@ export function Nav() {
               </svg>
               WhatsApp
             </a>
-            <Link href="/consultation" className="btn btn-gold-outline flex items-center justify-center" style={{ height: "46px", padding: "0 24px", fontSize: 12 }}>
+            <Link
+              href="/consultation"
+              className="btn btn-primary flex items-center justify-center transition-all duration-300"
+              style={{
+                height: "46px",
+                padding: "0 24px",
+                fontSize: 12,
+                fontWeight: "700",
+                boxShadow: transparent ? "0 4px 15px rgba(201, 168, 106, 0.4)" : "0 4px 15px rgba(201, 168, 106, 0.2)"
+              }}
+            >
               Schedule Consultation
             </Link>
           </nav>

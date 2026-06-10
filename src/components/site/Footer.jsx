@@ -67,9 +67,15 @@ export function Footer() {
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs opacity-60">
           <div>© {new Date().getFullYear()} Souvenir Interiors. All rights reserved.</div>
           <div className="flex gap-6">
-            <span>Instagram</span>
-            <span>Pinterest</span>
-            <span>LinkedIn</span>
+            <a href="https://www.instagram.com/souvenirinteriors/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">
+              Instagram
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61590661046034" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">
+              Facebook
+            </a>
+            <a href="https://www.youtube.com/@SouvenirInteriors" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">
+              YouTube
+            </a>
           </div>
         </div>
       </div>

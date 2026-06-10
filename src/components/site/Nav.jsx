@@ -33,12 +33,12 @@ export function Nav() {
                 ? "bg-transparent border-b border-transparent"
                 : "bg-[rgba(250,248,245,0.96)] backdrop-blur-md border-b border-black/[0.08] shadow-[0_7px_28px_rgba(0,0,0,0.09)]",
         ].join(" ")}>
-        <div className="w-full max-w-[1440px] mx-auto px-5 md:px-10 lg:px-12 xl:px-16 flex items-center justify-between h-[100px]">
+        <div className="w-full max-w-[1440px] mx-auto px-5 md:px-10 lg:px-12 xl:px-16 flex items-center justify-between h-[72px] lg:h-[100px]">
           <Link href="/" className="flex items-center group">
             <img
               src={transparent ? "/Group 1000002304 (1).svg" : "/Group 1000002301.svg"}
               alt="Souvenir Interiors Logo"
-              className="h-[36px] md:h-[44px] w-auto object-contain transition-all duration-300 group-hover:scale-105"
+              className="h-[28px] lg:h-[44px] w-auto object-contain transition-all duration-300 group-hover:scale-105"
             />
           </Link>
 
@@ -114,12 +114,12 @@ export function Nav() {
             "fixed inset-0 z-[60] bg-charcoal text-warm-white transition-all duration-500 flex flex-col overflow-y-auto pb-10",
             open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none",
         ].join(" ")} style={{ backgroundColor: "#1a1a1a", color: "#faf8f5" }}>
-        <div className="container-x flex items-center justify-between h-[100px] flex-shrink-0">
+        <div className="container-x flex items-center justify-between h-[72px] lg:h-[100px] flex-shrink-0">
           <div className="flex items-center">
             <img
               src="/Group 1000002304 (1).svg"
               alt="Souvenir Interiors Logo"
-              className="h-[36px] w-auto object-contain"
+              className="h-[28px] lg:h-[36px] w-auto object-contain"
             />
           </div>
           <button onClick={() => setOpen(false)} aria-label="Close menu" className="p-2 -mr-2">

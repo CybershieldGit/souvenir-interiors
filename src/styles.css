@@ -224,8 +224,8 @@
   }
 
   .section-y {
-    padding-top: 64px;
-    padding-bottom: 64px;
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 
   @media (min-width: 768px) {
@@ -249,17 +249,24 @@
     justify-content: center;
     gap: 12px;
     font-family: var(--font-sans);
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    padding: 18px 32px;
+    padding: 14px 24px;
     border-radius: 2px;
     transition: all 0.35s var(--ease-smooth);
     cursor: pointer;
     border: 1px solid transparent;
     white-space: nowrap;
     line-height: 1;
+  }
+
+  @media (min-width: 768px) {
+    .btn {
+      font-size: 14px;
+      padding: 18px 32px;
+    }
   }
 
   .btn-primary {

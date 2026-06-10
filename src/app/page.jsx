@@ -249,16 +249,15 @@ export default function Home() {
                 The expertise behind <em className="italic" style={{ color: "#e8d5a3" }}>your dream space.</em>
               </h2>
               <p className="mt-8 text-lg leading-relaxed opacity-85 max-w-xl">
-                With over 35 years crafting interior environments for the most discerning clients in
-                India, Mr. Noor brings a depth of design intelligence that is unmatched in Delhi NCR.
-                Every project carries the mark of considered artistry — and the precision of a designer
-                who has never considered mediocrity an option.
+                Nitin founded Souvenir Interiors with a clear mission: to bring global design standards and genuinely bespoke experiences to the luxury homeowners of Delhi NCR — without the impersonal, assembly-line approach larger platforms have normalised.
+
+
               </p>
 
               <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8">
                 {[
                   ["Nitin Garg", "Founder & CEO"],
-                  ["Mr. Noor", "Design Head · 35+ Years"],
+                  ["Mr. Noor", "Design Head"],
                   ["Mr. Nadeem", "Delivery & Quality Head"],
                   ["Mrs. Rashi", "Client Experience"],
                 ].map(([name, role]) => (

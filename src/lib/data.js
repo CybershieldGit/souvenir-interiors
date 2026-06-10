@@ -1,19 +1,33 @@
 import indianLuxuryLiving from "@/assets/indian_luxury_living.png";
-import indianLuxuryBedroom from "@/assets/indian_luxury_bedroom.png";
+import indianLuxuryBedroom from "@/assets/indian_luxury_bedroom.jpg";
 import indianLuxuryKitchen from "@/assets/indian_luxury_kitchen.png";
 import indianLuxuryTvUnit from "@/assets/indian_luxury_tv_unit.png";
 import indianLuxuryFoyer from "@/assets/indian_luxury_foyer.png";
 import indianLuxuryDining from "@/assets/indian_luxury_dining.png";
-import indianLuxuryOffice from "@/assets/indian_luxury_office.png";
+import indianLuxuryOffice from "@/assets/indian_luxury_office.jpg";
+import executiveSuiteImg from "@/assets/executive_suite.jpg";
 import indianLuxuryBalcony from "@/assets/indian_luxury_balcony.png";
 import noor from "@/assets/portrait-noor.jpg";
-import userHome1 from "@/assets/user_home_1.jpg";
+import serviceTurnkey from "@/assets/service-turnkey.png";
+import serviceStorage from "@/assets/service-storage.png";
+import userHome1 from "@/assets/user_home_1.png";
 import userHome2 from "@/assets/user_home_2.jpg";
 import userHome3 from "@/assets/user_home_3.jpg";
 import userHome4 from "@/assets/user_home_4.jpg";
 import userHome5 from "@/assets/user_home_5.jpg";
-import projectOffice from "@/assets/project-office.jpg";
 import heroSunset from "@/assets/hero-sunset.png";
+
+// New service card images cropped from reference image
+import service01 from "@/assets/service_card_01.png";
+import service02 from "@/assets/service_card_02.png";
+import service03 from "@/assets/service_card_03.png";
+import service04 from "@/assets/service_card_04.png";
+import service05 from "@/assets/service_card_05.png";
+import service06 from "@/assets/service_card_06.png";
+import service07 from "@/assets/service_card_07.png";
+import service08 from "@/assets/service_card_08.png";
+import service09 from "@/assets/service_card_09.png";
+import service10 from "@/assets/service_card_10.png";
 
 export const images = {
     hero: heroSunset,
@@ -142,44 +156,27 @@ export const projects = [
         category: "Offices",
         year: "2025",
         area: "900 sq ft",
-        cover: indianLuxuryOffice,
-        gallery: [indianLuxuryOffice],
+        cover: executiveSuiteImg,
+        gallery: [executiveSuiteImg],
         vision: "A refined workspace for a managing director who wanted an office that felt more like a private study than a corporate room.",
         approach: "Warm woods, ambient lighting, and bespoke Indian craftsmanship were combined to create an atmosphere of quiet luxury and focus.",
         client: {
             quote: "This space has transformed how I work. It is elegant and incredibly grounded.",
             author: "Mr. S. K.",
         },
-    },
-    {
-        slug: "creative-design-studio",
-        name: "Creative Design Studio",
-        location: "Delhi",
-        type: "Boutique Office",
-        category: "Offices",
-        year: "2024",
-        area: "1,100 sq ft",
-        cover: projectOffice,
-        gallery: [projectOffice],
-        vision: "An inspiring space for a boutique agency, requiring a blend of collaborative areas and quiet zones for deep work.",
-        approach: "We embraced natural light and earthy tones, using subtle spatial dividers to maintain an open yet structured environment.",
-        client: {
-            quote: "The aesthetic perfectly captures our brand's ethos. The team loves it.",
-            author: "Creative Director",
-        },
     }
 ];
 
 export const services = [
     {
-        slug: "turnkey-interior-solutions",
-        name: "Turnkey Interior Solutions",
-        shortName: "Turnkey Solutions",
-        tagline: "From empty shell to move-in ready. One studio. One accountability.",
-        intro: "A complete turnkey delivery for clients who want one team accountable for design, procurement, fabrication, execution, and final styling.",
-        scope: ["Full scope brief", "Design development", "Civil & electrical coordination", "Project management"],
-        philosophy: "Turnkey means one number to call, one team to trust.",
-        cover: indianLuxuryLiving,
+        slug: "residential-interior-design",
+        name: "Residential Interior Design",
+        shortName: "Residential Design",
+        tagline: "Whole-home interiors, designed and delivered end-to-end.",
+        intro: "Complete home interior solutions for luxury apartments, penthouses, and villas.",
+        scope: ["Space planning", "Concept design", "3D visualization", "Material curation"],
+        philosophy: "A home should be a sanctuary of comfort and style.",
+        cover: service01,
     },
     {
         slug: "modular-kitchen-design",
@@ -189,7 +186,17 @@ export const services = [
         intro: "From layout planning to precision hardware, our kitchens are built around real cooking patterns.",
         scope: ["Kitchen layout planning", "Custom modular unit design", "Hardware and appliance integration"],
         philosophy: "Beauty must survive daily use.",
-        cover: indianLuxuryKitchen,
+        cover: service02,
+    },
+    {
+        slug: "luxury-living-room-interiors",
+        name: "Luxury Living Room Interiors",
+        shortName: "Living Rooms",
+        tagline: "Living rooms composed for conversation, for stillness, for guests.",
+        intro: "Composing living rooms that balance elegance, comfort, and direct interaction.",
+        scope: ["Seating layouts", "Feature walls", "Custom lighting design", "Furniture curation"],
+        philosophy: "The living room is the stage for your life's best moments.",
+        cover: service03,
     },
     {
         slug: "luxury-bedroom-design",
@@ -199,37 +206,67 @@ export const services = [
         intro: "We treat the bedroom as a sanctuary. Materials, lighting, and acoustics are designed for sleep first.",
         scope: ["Layout planning", "Upholstered walls", "Layered lighting design"],
         philosophy: "If the room does not improve your sleep, the design has failed.",
-        cover: indianLuxuryBedroom,
+        cover: service04,
     },
     {
-        slug: "tv-unit-feature-wall",
-        name: "TV Unit & Feature Walls",
-        shortName: "Feature Walls",
-        tagline: "Feature walls that anchor the room without dominating it.",
-        intro: "We design feature walls as composition, not as decoration — with material, light, and proportion.",
-        scope: ["Concept studies", "Material specification", "Custom joinery"],
-        philosophy: "A feature wall should reward you on the hundredth day.",
-        cover: indianLuxuryTvUnit,
+        slug: "false-ceiling-lighting-design",
+        name: "False Ceiling & Lighting Design",
+        shortName: "False Ceilings",
+        tagline: "Lighting as architecture. Ceilings as composition.",
+        intro: "Designing custom ceiling profiles and architectural lighting schemes to elevate your spaces.",
+        scope: ["Ceiling layouts", "Lighting layouts", "Cove and accent lighting detail"],
+        philosophy: "Lighting is the invisible dress of a room.",
+        cover: service05,
+    },
+    {
+        slug: "custom-furniture-design",
+        name: "Custom Furniture Design",
+        shortName: "Custom Furniture",
+        tagline: "Furniture made for your space, by craftspeople we have worked with for years.",
+        intro: "Bespoke furniture pieces tailored precisely to your functional needs and style preferences.",
+        scope: ["Bespoke design sketches", "Material selection", "Production oversight"],
+        philosophy: "Furniture should fit the space, not the other way around.",
+        cover: service06,
+    },
+    {
+        slug: "turnkey-interior-solutions",
+        name: "Turnkey Interior Solutions",
+        shortName: "Turnkey Solutions",
+        tagline: "From empty shell to move-in ready. One studio. One accountability.",
+        intro: "A complete turnkey delivery for clients who want one team accountable for design, procurement, fabrication, execution, and final styling.",
+        scope: ["Full scope brief", "Design development", "Civil & electrical coordination", "Project management"],
+        philosophy: "Turnkey means one number to call, one team to trust.",
+        cover: service07,
     },
     {
         slug: "office-commercial-interiors",
-        name: "Office & Commercial",
+        name: "Office & Commercial Interiors",
         shortName: "Office Interiors",
         tagline: "Workplaces designed for focus, presence, and the brand they represent.",
         intro: "Senior offices and boutique studios — designed with the same restraint as our residential work.",
         scope: ["Workplace strategy", "Reception design", "Acoustic and lighting design"],
         philosophy: "Your office is your most under-used brand asset.",
-        cover: indianLuxuryOffice,
+        cover: service08,
     },
     {
-        slug: "terrace-balcony-design",
-        name: "Terrace & Balcony Design",
-        shortName: "Terrace Design",
-        tagline: "Outdoor spaces designed for entertaining, relaxing, and taking in the view.",
-        intro: "We transform terraces and balconies into functional extensions of your living space.",
-        scope: ["Outdoor layout", "Weather-resistant materials", "Outdoor lighting"],
-        philosophy: "An outdoor space should be as considered as an indoor one.",
-        cover: indianLuxuryBalcony,
+        slug: "space-planning-storage",
+        name: "Space Planning & Storage",
+        shortName: "Storage & Planning",
+        tagline: "Planning that solves the rooms you actually live in.",
+        intro: "Intelligent layouts and custom storage systems designed to maximize space and enhance daily functionality.",
+        scope: ["Space optimization analysis", "Custom wardrobe design", "Built-in shelving & cabinetry"],
+        philosophy: "Storage is not about hiding things; it is about finding them with ease.",
+        cover: service09,
+    },
+    {
+        slug: "tv-unit-feature-wall-design",
+        name: "TV Unit & Feature Wall Design",
+        shortName: "Feature Walls",
+        tagline: "Feature walls that anchor the room without dominating it.",
+        intro: "We design feature walls as composition, not as decoration — with material, light, and proportion.",
+        scope: ["Concept studies", "Material specification", "Custom joinery"],
+        philosophy: "A feature wall should reward you on the hundredth day.",
+        cover: service10,
     }
 ];
 

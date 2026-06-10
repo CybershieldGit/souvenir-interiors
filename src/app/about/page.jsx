@@ -103,6 +103,13 @@ export default function About() {
           <div className="mt-20 space-y-24 md:space-y-32">
             {[
               {
+                name: "Nitin Garg",
+                role: "Founder & CEO · 10+ Years Experience",
+                img: images.office,
+                body: "Nitin founded Souvenir Interiors with a clear mission: to bring global design standards and genuinely bespoke experiences to the luxury homeowners of Delhi NCR — without the impersonal, assembly-line approach larger platforms have normalised.",
+                quote: "Every client deserves a design partner as invested in the outcome as they are.",
+              },
+              {
                 name: "Mr. Noor",
                 role: "Design Head · 35+ Years Experience",
                 img: images.noor,
@@ -123,13 +130,7 @@ export default function About() {
                 body: "The experience of working with Souvenir Interiors — from first inquiry to the day you receive your keys — is Mrs. Rashi's domain. She ensures that every client interaction reflects the premium standard our brand promises.",
                 quote: "Our clients' experience isn't just about the final space. It's about every single interaction in between.",
               },
-              {
-                name: "Nitin Garg",
-                role: "Founder & CEO",
-                img: images.office,
-                body: "Nitin founded Souvenir Interiors with a clear mission: to bring global design standards and genuinely bespoke experiences to the luxury homeowners of Delhi NCR — without the impersonal, assembly-line approach larger platforms have normalised.",
-                quote: "Every client deserves a design partner as invested in the outcome as they are.",
-              },
+
             ].map((p, i) => (
               <Reveal key={p.name}>
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">

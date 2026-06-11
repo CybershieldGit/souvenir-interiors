@@ -23,6 +23,16 @@ export function Nav() {
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
     useEffect(() => {
+        if (typeof window !== "undefined") {
+            const params = new URLSearchParams(window.location.search);
+            const keys = ["gclid", "fbclid", "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+            keys.forEach(key => {
+                const val = params.get(key);
+                if (val) localStorage.setItem(key, val);
+            });
+        }
+    }, []);
+    useEffect(() => {
         setOpen(false);
     }, [pathname]);
     const transparent = onHome && !scrolled;
@@ -127,19 +137,19 @@ export function Nav() {
           </button>
         </div>
         <nav className="container-x flex flex-col gap-8 mt-12 md:mt-16 flex-shrink-0">
-          {links.map((l) => (<Link key={l.href} href={l.href} className="font-display text-[36px] leading-none" style={{ color: "#faf8f5" }}>
+          {links.map((l) => (<Link key={l.href} href={l.href} className="font-display text-[24px] leading-none" style={{ color: "#faf8f5" }}>
               {l.label}
             </Link>))}
           <a
             href={`https://wa.me/${STUDIO.whatsapp.replace("+","")}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-display text-[36px] leading-none"
+            className="font-display text-[24px] leading-none"
             style={{ color: "#faf8f5" }}
           >
             WhatsApp
           </a>
-          <Link href="/consultation" className="font-display text-[36px] leading-none" style={{ color: "#c9a86a" }}>
+          <Link href="/consultation" className="font-display text-[24px] leading-none" style={{ color: "#c9a86a" }}>
             Consultation
           </Link>
         </nav>

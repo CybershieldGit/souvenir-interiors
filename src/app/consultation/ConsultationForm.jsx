@@ -65,31 +65,47 @@ export default function ConsultationForm() {
     setError("");
 
     try {
-      const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
-      if (!accessKey) {
-        setError("Web3Forms Access Key is not configured. Please add NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY to your .env.local.");
+      const sheetsUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL;
+      if (!sheetsUrl) {
+        setError("Google Sheets URL is not configured. Please add NEXT_PUBLIC_GOOGLE_SHEETS_URL to your .env.local.");
         setLoading(false);
         return;
       }
 
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const getParam = (key) => {
+        if (typeof window !== "undefined") {
+          return localStorage.getItem(key) || "";
+        }
+        return "";
+      };
+
+      const payload = {
+        leadType: "Consultation",
+        name: formData.name,
+        whatsapp: `+91 ${formData.whatsapp}`,
+        email: formData.email,
+        pincode: "",
+        location: formData.location || "Not specified",
+        scope: formData.scope || "Not specified",
+        meetingFormat: formData.format,
+        description: formData.notes || "None",
+        gclid: getParam("gclid"),
+        fbclid: getParam("fbclid"),
+        utm_source: getParam("utm_source"),
+        utm_medium: getParam("utm_medium"),
+        utm_campaign: getParam("utm_campaign"),
+        utm_content: getParam("utm_content"),
+        utm_term: getParam("utm_term"),
+        referrer: typeof document !== "undefined" ? document.referrer : "",
+        landing_page: typeof window !== "undefined" ? window.location.href : ""
+      };
+
+      const response = await fetch(sheetsUrl, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
+          "Content-Type": "text/plain;charset=utf-8"
         },
-        body: JSON.stringify({
-          access_key: accessKey,
-          subject: `New Consultation Request: ${formData.name}`,
-          from_name: "Souvenir Consultation",
-          name: formData.name,
-          email: formData.email,
-          whatsapp: `+91 ${formData.whatsapp}`,
-          location: formData.location || "Not specified",
-          scope: formData.scope || "Not specified",
-          format: formData.format,
-          notes: formData.notes || "None"
-        })
+        body: JSON.stringify(payload)
       });
 
       const result = await response.json();
@@ -97,7 +113,7 @@ export default function ConsultationForm() {
         setSent(true);
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
-        setError(result.message || "Failed to submit request. Please try again.");
+        setError(result.error || "Failed to submit request. Please try again.");
       }
     } catch (err) {
       setError("An unexpected error occurred. Please try again.");

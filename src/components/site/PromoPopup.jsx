@@ -58,27 +58,47 @@ export function PromoPopup() {
     setError("");
 
     try {
-      const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
-      if (!accessKey) {
-        setError("Configuration error: Access key missing.");
+      const sheetsUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL;
+      if (!sheetsUrl) {
+        setError("Google Sheets URL is not configured. Please add NEXT_PUBLIC_GOOGLE_SHEETS_URL to your .env.local.");
         setLoading(false);
         return;
       }
 
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const getParam = (key) => {
+        if (typeof window !== "undefined") {
+          return localStorage.getItem(key) || "";
+        }
+        return "";
+      };
+
+      const payload = {
+        leadType: "Offer Popup",
+        name: formData.name,
+        whatsapp: `+91 ${formData.mobile}`,
+        email: "",
+        pincode: formData.pincode,
+        location: "",
+        scope: "Promo Popup Offer",
+        meetingFormat: "Not specified",
+        description: "Promo Offer requested",
+        gclid: getParam("gclid"),
+        fbclid: getParam("fbclid"),
+        utm_source: getParam("utm_source"),
+        utm_medium: getParam("utm_medium"),
+        utm_campaign: getParam("utm_campaign"),
+        utm_content: getParam("utm_content"),
+        utm_term: getParam("utm_term"),
+        referrer: typeof document !== "undefined" ? document.referrer : "",
+        landing_page: typeof window !== "undefined" ? window.location.href : ""
+      };
+
+      const response = await fetch(sheetsUrl, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
+          "Content-Type": "text/plain;charset=utf-8"
         },
-        body: JSON.stringify({
-          access_key: accessKey,
-          subject: `New Promo Offer Request: ${formData.name}`,
-          from_name: "Souvenir Promo Offer",
-          name: formData.name,
-          mobile: `+91 ${formData.mobile}`,
-          pincode: formData.pincode,
-        })
+        body: JSON.stringify(payload)
       });
 
       const result = await response.json();
@@ -89,7 +109,7 @@ export function PromoPopup() {
           setIsOpen(false);
         }, 3000);
       } else {
-        setError(result.message || "Failed to submit. Please try again.");
+        setError(result.error || "Failed to submit. Please try again.");
       }
     } catch (err) {
       setError("An unexpected error occurred. Please try again.");

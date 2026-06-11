@@ -128,7 +128,7 @@ export default async function ServiceDetailPage({ params }) {
               <Link href="/portfolio" className="link-arrow">View Full Portfolio <ArrowRight size={14} /></Link>
             </Reveal>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {related.map((p, i) => (
               <Reveal key={p.slug} delay={i * 100}>
                 <Link href={`/portfolio/${p.slug}`} className="group block">

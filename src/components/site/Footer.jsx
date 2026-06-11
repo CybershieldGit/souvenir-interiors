@@ -4,7 +4,7 @@ export function Footer() {
     return (<footer style={{ backgroundColor: "#1a1a1a", color: "#faf8f5" }}>
       <div className="container-x section-y">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12">
-          <div className="md:col-span-5">
+          <div className="md:col-span-6 lg:col-span-5">
             <div className="font-display text-[26px] md:text-[32px] tracking-[0.04em]">
               Luxury Interiors,
               <br />
@@ -20,7 +20,7 @@ export function Footer() {
             </Link>
           </div>
 
-          <div className="md:col-span-3">
+          <div className="md:col-span-6 lg:col-span-3">
             <div className="eyebrow eyebrow-light mb-5">Services</div>
             <ul className="space-y-3">
               {services.slice(0, 8).map((s) => (<li key={s.slug}>
@@ -31,7 +31,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="md:col-span-2">
+          <div className="md:col-span-6 lg:col-span-2">
             <div className="eyebrow eyebrow-light mb-5">Studio</div>
             <ul className="space-y-3">
               {[
@@ -48,7 +48,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="md:col-span-2">
+          <div className="md:col-span-6 lg:col-span-2">
             <div className="eyebrow eyebrow-light mb-5">Visit</div>
             <p className="text-sm opacity-75 leading-relaxed">
               {STUDIO.address}
@@ -75,6 +75,9 @@ export function Footer() {
             </a>
             <a href="https://www.youtube.com/@SouvenirInteriors" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">
               YouTube
+            </a>
+            <a href="https://www.linkedin.com/in/souvenir-interiors-bb6a84404/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">
+              LinkedIn
             </a>
           </div>
         </div>

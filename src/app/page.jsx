@@ -60,7 +60,7 @@ export default function Home() {
 
       {/* TRUST BAR */}
       <section className="border-y" style={{ borderColor: "#e5e5e0", backgroundColor: "#faf8f5" }}>
-        <div className="container-x py-12 md:py-16 grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6">
+        <div className="container-x py-12 md:py-16 grid grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-6 md:gap-x-12">
           {[
             { stat: "150+", label: "Projects Delivered Across Delhi NCR" },
             { stat: "35 Years", label: "Of Design Excellence" },
@@ -68,7 +68,7 @@ export default function Home() {
             { stat: "★★★★★", label: "Rated By Our Clients" },
           ].map((t, i) => (
             <Reveal key={i} delay={i * 80} className="text-center md:text-left">
-              <div className="font-display text-3xl md:text-5xl font-light" style={{ color: "#1a1a1a" }}>
+              <div className="font-display text-3xl lg:text-5xl font-light" style={{ color: "#1a1a1a" }}>
                 {t.stat}
               </div>
               <div className="mt-3 text-xs uppercase tracking-[0.14em] text-mid-grey" style={{ color: "#6b6b6b" }}>
@@ -88,7 +88,7 @@ export default function Home() {
                 <span className="rule" /> Our Work
               </div>
               <h2 className="heading-1 max-w-3xl">
-                Spaces designed to be lived in — <em className="italic">and admired.</em>
+                Spaces designed to be lived in  <em className="italic">and admired.</em>
               </h2>
             </Reveal>
             <Reveal delay={150}>
@@ -98,14 +98,14 @@ export default function Home() {
             </Reveal>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
             {projects.slice(0, 5).map((p, i) => {
               const spans = [
-                "md:col-span-7 md:row-span-2",
-                "md:col-span-5",
-                "md:col-span-5",
-                "md:col-span-6",
-                "md:col-span-6",
+                "lg:col-span-7 lg:row-span-2",
+                "lg:col-span-5",
+                "lg:col-span-5",
+                "lg:col-span-6",
+                "lg:col-span-6",
               ];
               const aspects = ["aspect-[4/5]", "aspect-[4/3]", "aspect-[4/3]", "aspect-[5/4]", "aspect-[5/4]"];
               return (
@@ -290,7 +290,7 @@ export default function Home() {
             </h2>
           </Reveal>
 
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14">
+          <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-14">
             {[
               {
                 quote:

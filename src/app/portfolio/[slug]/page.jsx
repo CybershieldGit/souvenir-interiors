@@ -56,7 +56,7 @@ export default async function ProjectDetailPage({ params }) {
 
       {/* Meta bar */}
       <section className="border-b" style={{ borderColor: "#e5e5e0", backgroundColor: "#faf8f5" }}>
-        <div className="container-x py-10 grid grid-cols-2 md:grid-cols-5 gap-y-8">
+        <div className="container-x py-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-8">
           {[
             ["Type", project.type],
             ["Location", project.location],
@@ -126,7 +126,7 @@ export default async function ProjectDetailPage({ params }) {
             <div className="eyebrow mb-5"><span className="rule" /> You May Also Like</div>
             <h2 className="heading-2 mb-12">More from the studio.</h2>
           </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {related.map((p, i) => (
               <Reveal key={p.slug} delay={i * 100}>
                 <Link href={`/portfolio/${p.slug}`} className="group block">

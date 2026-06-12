@@ -73,12 +73,12 @@ export function PromoPopup() {
       };
 
       const payload = {
-        leadType: "Offer Popup",
+        leadType: "Promo Popup",
         name: formData.name,
-        whatsapp: `+91 ${formData.mobile}`,
+        whatsapp: `'+91 ${formData.mobile}`,
         email: "",
         pincode: formData.pincode,
-        location: "",
+        location: "Offer Popup",
         scope: "Promo Popup Offer",
         meetingFormat: "Not specified",
         description: "Promo Offer requested",

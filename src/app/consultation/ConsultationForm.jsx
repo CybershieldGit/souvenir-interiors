@@ -80,12 +80,12 @@ export default function ConsultationForm() {
       };
 
       const payload = {
-        leadType: "Consultation",
+        leadType: "Consultation Form",
         name: formData.name,
-        whatsapp: `+91 ${formData.whatsapp}`,
+        whatsapp: `'+91 ${formData.whatsapp}`,
         email: formData.email,
         pincode: "",
-        location: formData.location || "Not specified",
+        location: formData.location ? `Consultation Page - ${formData.location}` : "Consultation Page",
         scope: formData.scope || "Not specified",
         meetingFormat: formData.format,
         description: formData.notes || "None",

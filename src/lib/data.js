@@ -8,6 +8,9 @@ import indianLuxuryOffice from "@/assets/indian_luxury_office.jpg";
 import executiveSuiteImg from "@/assets/executive_suite.jpg";
 import indianLuxuryBalcony from "@/assets/indian_luxury_balcony.png";
 import noor from "@/assets/portrait-noor.jpg";
+import nitin from "@/assets/portrait-nitin.png";
+import nadeem from "@/assets/portrait-nadeem.jpg";
+import rashi from "@/assets/portrait-rashi.jpg";
 import serviceTurnkey from "@/assets/service-turnkey.png";
 import serviceStorage from "@/assets/service-storage.png";
 import userHome1 from "@/assets/user_home_1.png";
@@ -30,6 +33,9 @@ import service09 from "@/assets/service_card_09.png";
 import service10 from "@/assets/service_card_10.png";
 
 export const images = {
+    rashi: rashi,
+    nadeem: nadeem,
+    nitin: nitin,
     hero: heroSunset,
     kitchen: indianLuxuryKitchen,
     bedroom: userHome4,

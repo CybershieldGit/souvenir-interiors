@@ -105,7 +105,7 @@ export default function About() {
               {
                 name: "Nitin Garg",
                 role: "Founder & CEO · 10+ Years Experience",
-                img: images.office,
+                img: images.nitin,
                 body: "Nitin founded Souvenir Interiors with a clear mission: to bring global design standards and genuinely bespoke experiences to the luxury homeowners of Delhi NCR — without the impersonal, assembly-line approach larger platforms have normalised.",
                 quote: "Every client deserves a design partner as invested in the outcome as they are.",
               },
@@ -119,14 +119,14 @@ export default function About() {
               {
                 name: "Mr. Nadeem",
                 role: "Delivery & Quality Head",
-                img: images.materials,
+                img: images.nadeem,
                 body: "If Mr. Noor is the vision, Mr. Nadeem is the discipline. Every material delivered to site is verified against the approved specification. Every contractor team is briefed to the same quality standard. Every milestone is signed off against a detailed inspection checklist.",
                 quote: "Beautiful design means nothing if execution fails. My responsibility is that the design you approved is exactly what gets built.",
               },
               {
                 name: "Mrs. Rashi",
                 role: "Client Experience Head",
-                img: images.foyer,
+                img: images.rashi,
                 body: "The experience of working with Souvenir Interiors — from first inquiry to the day you receive your keys — is Mrs. Rashi's domain. She ensures that every client interaction reflects the premium standard our brand promises.",
                 quote: "Our clients' experience isn't just about the final space. It's about every single interaction in between.",
               },

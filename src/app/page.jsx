@@ -238,7 +238,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <Reveal className="lg:col-span-5">
               <div className="aspect-[4/5] overflow-hidden">
-                <img src={getSrc(images.noor)} alt="Mr. Noor, Design Head at Souvenir Interiors" loading="lazy" className="w-full h-full object-cover" />
+                <img src={getSrc(images.nitin)} alt="Nitin Garg, Founder & CEO at Souvenir Interiors" loading="lazy" className="w-full h-full object-cover" />
               </div>
             </Reveal>
             <Reveal delay={150} className="lg:col-span-7">
